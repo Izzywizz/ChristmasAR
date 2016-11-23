@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M5a-NM-mts">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Terms View Controller-->
         <scene sceneID="gwT-RI-tmL">
@@ -18,22 +23,20 @@
                         <viewControllerLayoutGuide type="bottom" id="nXc-eT-2RR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VaZ-Rt-GoW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-t2-c5e" userLabel="Accept">
-                                <rect key="frame" x="164" y="319" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-t2-c5e" userLabel="Accept">
+                                <rect key="frame" x="63" y="611" width="321" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                                <state key="normal" title="Accept" backgroundImage="accept-button"/>
                                 <connections>
                                     <action selector="acceptButtonPressed:" destination="KXS-e7-bUZ" eventType="touchUpInside" id="XYu-ZC-sZh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.87058823529411766" green="0.22352941176470589" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Vav-t2-c5e" firstAttribute="centerY" secondItem="VaZ-Rt-GoW" secondAttribute="centerY" id="UWq-nK-eT5"/>
-                            <constraint firstItem="Vav-t2-c5e" firstAttribute="centerX" secondItem="VaZ-Rt-GoW" secondAttribute="centerX" id="ywt-tE-fVT"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aJT-xT-0ap"/>
                     <connections>
@@ -42,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kg-8J-7Z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215.19999999999999" y="36.431784107946029"/>
+            <point key="canvasLocation" x="-290" y="41"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Hwo-uB-z4p">
@@ -53,16 +56,16 @@
                         <viewControllerLayoutGuide type="bottom" id="Ojp-bb-dKD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Yy-ok-xUR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="SMV-RU-xqs" userLabel="PlaceholderBackground image">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="characters" translatesAutoresizingMaskIntoConstraints="NO" id="CAi-Jh-Ama" userLabel="santaSnowmanRaindeer">
-                                <rect key="frame" x="0.0" y="415" width="375" height="252"/>
+                                <rect key="frame" x="0.0" y="484" width="414" height="252"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="LtU-R1-gGf"/>
+                                    <constraint firstAttribute="width" constant="414" id="LtU-R1-gGf"/>
                                     <constraint firstAttribute="height" constant="252" id="UBq-dC-9KD"/>
                                 </constraints>
                             </imageView>
@@ -85,14 +88,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIt-Rj-4Nd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="972" y="37.331334332833585"/>
+            <point key="canvasLocation" x="416" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qit-mt-w7h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M5a-NM-mts" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PnY-hV-qhm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PnY-hV-qhm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -103,10 +106,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xib-dz-aeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-724" y="36.431784107946029"/>
+            <point key="canvasLocation" x="-994" y="41"/>
         </scene>
     </scenes>
     <resources>
+        <image name="accept-button" width="363" height="71"/>
         <image name="characters" width="375" height="252"/>
         <image name="photo" width="375" height="667"/>
     </resources>

@@ -17,6 +17,9 @@
 		431665331DE5BF2300324F40 /* SnowFalling.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665321DE5BF2300324F40 /* SnowFalling.m */; };
 		431665371DE5D5E300324F40 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665361DE5D5E300324F40 /* TermsViewController.m */; };
 		4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665391DE5D67A00324F40 /* SnowGeneratorView.m */; };
+		43EF269E1DE5E12B0020D809 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */; };
+		43EF269F1DE5E12B0020D809 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */; };
+		43EF26A01DE5E12B0020D809 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269D1DE5E12B0020D809 /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		431665361DE5D5E300324F40 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsViewController.m; path = ../TermsViewController.m; sourceTree = "<group>"; };
 		431665381DE5D67A00324F40 /* SnowGeneratorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowGeneratorView.h; sourceTree = "<group>"; };
 		431665391DE5D67A00324F40 /* SnowGeneratorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowGeneratorView.m; sourceTree = "<group>"; };
+		43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		43EF269D1DE5E12B0020D809 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		431665031DE5B8E900324F40 /* ChristmasAR */ = {
 			isa = PBXGroup;
 			children = (
+				43EF26A11DE5E1300020D809 /* Fonts */,
 				431665341DE5C07C00324F40 /* Helper Classes */,
 				431665071DE5B8E900324F40 /* AppDelegate.h */,
 				431665081DE5B8E900324F40 /* AppDelegate.m */,
@@ -132,6 +139,24 @@
 				431665391DE5D67A00324F40 /* SnowGeneratorView.m */,
 			);
 			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		43EF269A1DE5E12B0020D809 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */,
+				43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */,
+				43EF269D1DE5E12B0020D809 /* OFL.txt */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
+		43EF26A11DE5E1300020D809 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				43EF269A1DE5E12B0020D809 /* Montserrat */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,8 +243,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EF26A01DE5E12B0020D809 /* OFL.txt in Resources */,
+				43EF269E1DE5E12B0020D809 /* Montserrat-Bold.ttf in Resources */,
 				431665141DE5B8E900324F40 /* LaunchScreen.storyboard in Resources */,
 				431665111DE5B8E900324F40 /* Assets.xcassets in Resources */,
+				43EF269F1DE5E12B0020D809 /* Montserrat-Regular.ttf in Resources */,
 				4316650F1DE5B8E900324F40 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6HA878TP6G;
 				INFOPLIST_FILE = ChristmasAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.reraise.ChristmasAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,6 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6HA878TP6G;
 				INFOPLIST_FILE = ChristmasAR/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.reraise.ChristmasAR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +474,7 @@
 				431665251DE5B8E900324F40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		431665261DE5B8E900324F40 /* Build configuration list for PBXNativeTarget "ChristmasARTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +483,7 @@
 				431665281DE5B8E900324F40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
