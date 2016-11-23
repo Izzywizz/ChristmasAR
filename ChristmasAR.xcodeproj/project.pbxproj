@@ -14,6 +14,7 @@
 		431665111DE5B8E900324F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 431665101DE5B8E900324F40 /* Assets.xcassets */; };
 		431665141DE5B8E900324F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431665121DE5B8E900324F40 /* LaunchScreen.storyboard */; };
 		4316651F1DE5B8E900324F40 /* ChristmasARTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4316651E1DE5B8E900324F40 /* ChristmasARTests.m */; };
+		431665331DE5BF2300324F40 /* SnowFalling.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665321DE5BF2300324F40 /* SnowFalling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		4316651A1DE5B8E900324F40 /* ChristmasARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChristmasARTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4316651E1DE5B8E900324F40 /* ChristmasARTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChristmasARTests.m; sourceTree = "<group>"; };
 		431665201DE5B8E900324F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		431665311DE5BF2300324F40 /* SnowFalling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowFalling.h; sourceTree = "<group>"; };
+		431665321DE5BF2300324F40 /* SnowFalling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowFalling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		431665031DE5B8E900324F40 /* ChristmasAR */ = {
 			isa = PBXGroup;
 			children = (
+				431665311DE5BF2300324F40 /* SnowFalling.h */,
+				431665321DE5BF2300324F40 /* SnowFalling.m */,
 				431665071DE5B8E900324F40 /* AppDelegate.h */,
 				431665081DE5B8E900324F40 /* AppDelegate.m */,
 				4316650A1DE5B8E900324F40 /* ViewController.h */,
@@ -215,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431665331DE5BF2300324F40 /* SnowFalling.m in Sources */,
 				4316650C1DE5B8E900324F40 /* ViewController.m in Sources */,
 				431665091DE5B8E900324F40 /* AppDelegate.m in Sources */,
 				431665061DE5B8E900324F40 /* main.m in Sources */,
