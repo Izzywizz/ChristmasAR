@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SnowFalling.h"
-
+#import "SnowGeneratorView.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *santaSnowmanRaindeerImageView;
@@ -22,7 +21,7 @@
 {
     [super viewDidLoad];
     [self generateSnowflakes];
-    [self animateRedRaindeerNose];
+    [self animateRedRaindeerNose]; 
 }
 
 #pragma mark - Animation Methods
@@ -47,15 +46,8 @@
  on from the class. If you wish to add more snowflakes to the view ensure they are named snow-flakes-%d and increase the count on the loop
  */
 -(void) generateSnowflakes  {
-    for (int i = 1; i < 4; i++) {
-        SnowFalling *snow = [[SnowFalling alloc] initWithView:self.view];
-        // personalize values (optional)
-        snow.numbersOfFlake = 20;
-        snow.directionsOfFlake = SnowFlakeDirectionVertical;
-        snow.imageOfFlake = [UIImage imageNamed:[NSString stringWithFormat:@"snow-flake-%d.png", i]];
-        
-        snow.hidden = NO;
-    }
+    SnowGeneratorView *view = [[SnowGeneratorView alloc] init];
+    [view generateSnowflakes:self.view];
 }
 
 @end

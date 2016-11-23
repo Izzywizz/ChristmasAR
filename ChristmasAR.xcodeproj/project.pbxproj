@@ -15,6 +15,8 @@
 		431665141DE5B8E900324F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431665121DE5B8E900324F40 /* LaunchScreen.storyboard */; };
 		4316651F1DE5B8E900324F40 /* ChristmasARTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4316651E1DE5B8E900324F40 /* ChristmasARTests.m */; };
 		431665331DE5BF2300324F40 /* SnowFalling.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665321DE5BF2300324F40 /* SnowFalling.m */; };
+		431665371DE5D5E300324F40 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665361DE5D5E300324F40 /* TermsViewController.m */; };
+		4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665391DE5D67A00324F40 /* SnowGeneratorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		431665201DE5B8E900324F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		431665311DE5BF2300324F40 /* SnowFalling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowFalling.h; sourceTree = "<group>"; };
 		431665321DE5BF2300324F40 /* SnowFalling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowFalling.m; sourceTree = "<group>"; };
+		431665351DE5D5E300324F40 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermsViewController.h; path = ../TermsViewController.h; sourceTree = "<group>"; };
+		431665361DE5D5E300324F40 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsViewController.m; path = ../TermsViewController.m; sourceTree = "<group>"; };
+		431665381DE5D67A00324F40 /* SnowGeneratorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowGeneratorView.h; sourceTree = "<group>"; };
+		431665391DE5D67A00324F40 /* SnowGeneratorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowGeneratorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 				431665341DE5C07C00324F40 /* Helper Classes */,
 				431665071DE5B8E900324F40 /* AppDelegate.h */,
 				431665081DE5B8E900324F40 /* AppDelegate.m */,
+				431665351DE5D5E300324F40 /* TermsViewController.h */,
+				431665361DE5D5E300324F40 /* TermsViewController.m */,
 				4316650A1DE5B8E900324F40 /* ViewController.h */,
 				4316650B1DE5B8E900324F40 /* ViewController.m */,
 				4316650D1DE5B8E900324F40 /* Main.storyboard */,
@@ -120,6 +128,8 @@
 			children = (
 				431665311DE5BF2300324F40 /* SnowFalling.h */,
 				431665321DE5BF2300324F40 /* SnowFalling.m */,
+				431665381DE5D67A00324F40 /* SnowGeneratorView.h */,
+				431665391DE5D67A00324F40 /* SnowGeneratorView.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -228,6 +238,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431665371DE5D5E300324F40 /* TermsViewController.m in Sources */,
+				4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */,
 				431665331DE5BF2300324F40 /* SnowFalling.m in Sources */,
 				4316650C1DE5B8E900324F40 /* ViewController.m in Sources */,
 				431665091DE5B8E900324F40 /* AppDelegate.m in Sources */,
