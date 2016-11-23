@@ -27,7 +27,7 @@
 
 #pragma mark - Animation Methods
 /**
- Creating an animiated red nose! This method flicks between two static images of a raindeer with a red nose/ brown nose.
+ Creating an animiated red nose! This method flicks between two static images of a raindeer with a red nose and with a brown nose.
  The images are animated using the animationImages property
  */
 -(void) animateRedRaindeerNose  {
