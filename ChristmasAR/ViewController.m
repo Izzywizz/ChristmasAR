@@ -40,11 +40,7 @@
     //[_imageView stopAnimating];
 }
 
-/**
- Genreate 3 different types of flakes and add them to the view using the custom framework called 'SnowFalling', the snowFalling class
- handles the genration/ animation, speed and rotation movement of the snowflakes and the individual properties/ method can be called
- on from the class. If you wish to add more snowflakes to the view ensure they are named snow-flakes-%d and increase the count on the loop
- */
+
 -(void) generateSnowflakes  {
     SnowGeneratorView *view = [[SnowGeneratorView alloc] init];
     [view generateSnowflakes:self.view];

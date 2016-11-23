@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="M5a-NM-mts">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
@@ -23,12 +27,26 @@
                         <viewControllerLayoutGuide type="bottom" id="nXc-eT-2RR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VaZ-Rt-GoW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-t2-c5e" userLabel="Accept">
-                                <rect key="frame" x="63" y="611" width="321" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash Screen" translatesAutoresizingMaskIntoConstraints="NO" id="sRp-1D-Sqp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6O-doS">
+                                <rect key="frame" x="16" y="395.5" width="343" height="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app will blow your child imagination with use of clever imagery and positioning. Take a pic and see for yourself!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dt4-XS-VXd">
+                                <rect key="frame" x="20" y="292.5" width="335" height="83"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-t2-c5e" userLabel="Accept">
+                                <rect key="frame" x="28" y="482" width="363" height="71"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <state key="normal" title="Accept" backgroundImage="accept-button"/>
                                 <connections>
@@ -36,16 +54,31 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.87058823529411766" green="0.22352941176470589" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sRp-1D-Sqp" secondAttribute="trailing" id="3au-l3-LAp"/>
+                            <constraint firstItem="Dt4-XS-VXd" firstAttribute="centerX" secondItem="VaZ-Rt-GoW" secondAttribute="centerX" id="4m3-8u-wKv"/>
+                            <constraint firstItem="Dt4-XS-VXd" firstAttribute="centerY" secondItem="VaZ-Rt-GoW" secondAttribute="centerY" id="5nD-N1-4A2"/>
+                            <constraint firstItem="nXc-eT-2RR" firstAttribute="top" secondItem="sRp-1D-Sqp" secondAttribute="bottom" id="Ck5-aU-N6n"/>
+                            <constraint firstAttribute="trailing" secondItem="Dt4-XS-VXd" secondAttribute="trailing" constant="20" id="Dlk-wh-Nhj"/>
+                            <constraint firstItem="Vav-t2-c5e" firstAttribute="leading" secondItem="sRp-1D-Sqp" secondAttribute="trailing" constant="-348" id="Ega-tm-wSj"/>
+                            <constraint firstItem="Dt4-XS-VXd" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" constant="20" id="Zct-MY-P6J"/>
+                            <constraint firstItem="sRp-1D-Sqp" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" id="eCl-lf-qnn"/>
+                            <constraint firstItem="oCa-6O-doS" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leadingMargin" id="gxg-TO-Ho0"/>
+                            <constraint firstItem="sRp-1D-Sqp" firstAttribute="top" secondItem="p59-pg-g7o" secondAttribute="bottom" constant="-64" id="hRT-WX-Dal"/>
+                            <constraint firstItem="oCa-6O-doS" firstAttribute="top" secondItem="Dt4-XS-VXd" secondAttribute="bottom" constant="20" id="m4w-5j-Wvd"/>
+                            <constraint firstItem="Vav-t2-c5e" firstAttribute="top" secondItem="oCa-6O-doS" secondAttribute="bottom" constant="8" id="usH-Ge-tE6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oCa-6O-doS" secondAttribute="trailing" id="wtV-bS-QzA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aJT-xT-0ap"/>
                     <connections>
+                        <outlet property="emailAddressTextField" destination="oCa-6O-doS" id="XKK-en-cSq"/>
                         <segue destination="PbD-HK-UF6" kind="show" identifier="GoToPhoto" id="Dg1-6e-m8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kg-8J-7Z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290" y="41"/>
+            <point key="canvasLocation" x="-292.5" y="39.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Hwo-uB-z4p">
@@ -56,16 +89,15 @@
                         <viewControllerLayoutGuide type="bottom" id="Ojp-bb-dKD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Yy-ok-xUR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="SMV-RU-xqs" userLabel="PlaceholderBackground image">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="characters" translatesAutoresizingMaskIntoConstraints="NO" id="CAi-Jh-Ama" userLabel="santaSnowmanRaindeer">
-                                <rect key="frame" x="0.0" y="484" width="414" height="252"/>
+                                <rect key="frame" x="0.0" y="415" width="375" height="252"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="LtU-R1-gGf"/>
                                     <constraint firstAttribute="height" constant="252" id="UBq-dC-9KD"/>
                                 </constraints>
                             </imageView>
@@ -110,6 +142,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Splash Screen" width="375" height="667"/>
         <image name="accept-button" width="363" height="71"/>
         <image name="characters" width="375" height="252"/>
         <image name="photo" width="375" height="667"/>
