@@ -84,8 +84,7 @@
 		431665031DE5B8E900324F40 /* ChristmasAR */ = {
 			isa = PBXGroup;
 			children = (
-				431665311DE5BF2300324F40 /* SnowFalling.h */,
-				431665321DE5BF2300324F40 /* SnowFalling.m */,
+				431665341DE5C07C00324F40 /* Helper Classes */,
 				431665071DE5B8E900324F40 /* AppDelegate.h */,
 				431665081DE5B8E900324F40 /* AppDelegate.m */,
 				4316650A1DE5B8E900324F40 /* ViewController.h */,
@@ -114,6 +113,15 @@
 				431665201DE5B8E900324F40 /* Info.plist */,
 			);
 			path = ChristmasARTests;
+			sourceTree = "<group>";
+		};
+		431665341DE5C07C00324F40 /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				431665311DE5BF2300324F40 /* SnowFalling.h */,
+				431665321DE5BF2300324F40 /* SnowFalling.m */,
+			);
+			name = "Helper Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
