@@ -6,9 +6,8 @@
 //  Copyright © 2016 Izzy. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface TakePhotoViewController : ViewController
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@interface TakePhotoViewController : UIViewController
 
 @end

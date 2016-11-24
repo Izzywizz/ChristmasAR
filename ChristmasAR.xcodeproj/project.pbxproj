@@ -18,7 +18,7 @@
 		431665371DE5D5E300324F40 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665361DE5D5E300324F40 /* EmailViewController.m */; };
 		4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665391DE5D67A00324F40 /* SnowGeneratorView.m */; };
 		4326300B1DE6F5E4006F8CCB /* RRRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4326300A1DE6F5E4006F8CCB /* RRRegistration.m */; };
-		432630101DE6FED1006F8CCB /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4326300F1DE6FED1006F8CCB /* TakePhotoViewController.m */; };
+		438037A31DE7200D00FCE390 /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438037A21DE7200D00FCE390 /* TakePhotoViewController.m */; };
 		43EF269E1DE5E12B0020D809 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */; };
 		43EF269F1DE5E12B0020D809 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */; };
 		43EF26A01DE5E12B0020D809 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269D1DE5E12B0020D809 /* OFL.txt */; };
@@ -71,8 +71,8 @@
 		431665391DE5D67A00324F40 /* SnowGeneratorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowGeneratorView.m; sourceTree = "<group>"; };
 		432630091DE6F5E4006F8CCB /* RRRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRRegistration.h; sourceTree = "<group>"; };
 		4326300A1DE6F5E4006F8CCB /* RRRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRRegistration.m; sourceTree = "<group>"; };
-		4326300E1DE6FED1006F8CCB /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakePhotoViewController.h; path = ../TakePhotoViewController.h; sourceTree = "<group>"; };
-		4326300F1DE6FED1006F8CCB /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakePhotoViewController.m; path = ../TakePhotoViewController.m; sourceTree = "<group>"; };
+		438037A11DE7200D00FCE390 /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakePhotoViewController.h; path = ../TakePhotoViewController.h; sourceTree = "<group>"; };
+		438037A21DE7200D00FCE390 /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakePhotoViewController.m; path = ../TakePhotoViewController.m; sourceTree = "<group>"; };
 		43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		43EF269D1DE5E12B0020D809 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 				431665081DE5B8E900324F40 /* AppDelegate.m */,
 				431665351DE5D5E300324F40 /* EmailViewController.h */,
 				431665361DE5D5E300324F40 /* EmailViewController.m */,
-				4326300E1DE6FED1006F8CCB /* TakePhotoViewController.h */,
-				4326300F1DE6FED1006F8CCB /* TakePhotoViewController.m */,
+				438037A11DE7200D00FCE390 /* TakePhotoViewController.h */,
+				438037A21DE7200D00FCE390 /* TakePhotoViewController.m */,
 				4316650A1DE5B8E900324F40 /* ViewController.h */,
 				4316650B1DE5B8E900324F40 /* ViewController.m */,
 				4316650D1DE5B8E900324F40 /* Main.storyboard */,
@@ -426,7 +426,7 @@
 				4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */,
 				43EF26D01DE5EB820020D809 /* IQBarButtonItem.m in Sources */,
 				431665331DE5BF2300324F40 /* SnowFalling.m in Sources */,
-				432630101DE6FED1006F8CCB /* TakePhotoViewController.m in Sources */,
+				438037A31DE7200D00FCE390 /* TakePhotoViewController.m in Sources */,
 				43EF26CA1DE5EB820020D809 /* IQUIView+Hierarchy.m in Sources */,
 				43EF26C71DE5EB820020D809 /* IQNSArray+Sort.m in Sources */,
 				4316650C1DE5B8E900324F40 /* ViewController.m in Sources */,

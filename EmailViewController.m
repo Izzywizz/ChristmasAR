@@ -106,7 +106,7 @@
     RRRegistration *validation = [RRRegistration new];
     
     if ([validation validateTextField:_emailAddressTextField]) {
-        [self performSegueWithIdentifier:@"GoToPhoto" sender:self];
+        [self performSegueWithIdentifier:@"GoToTakePhoto" sender:self];
     } else  {
         NSLog(@"Alert Box");
         [self alertNoEmailView];

@@ -7,69 +7,32 @@
 //
 
 #import "TakePhotoViewController.h"
-#import <AVFoundation/AVFoundation.h>
 
-@interface TakePhotoViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface TakePhotoViewController ()
 
 @end
 
 @implementation TakePhotoViewController
 
-#pragma mark - UIViewController Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"Take photo class");
 }
 
-#pragma mark - Button Methods
-
-//Share button
-- (IBAction)shareButton:(id)sender {
-    [self shareContent];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)captureButtonPressed:(UIButton *)sender {
-    [self takePhotoUsingCamera:UIImagePickerControllerSourceTypeCamera];
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
-
-#pragma mark - Sharing Functionality
--(void)shareContent{
-    NSString * message = @"placeholder text";
-    UIImage * image = _imageView.image;
-    NSArray * shareItems = @[message, image];
-    
-    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
-    [self presentViewController:avc animated:YES completion:nil];
-}
-
-#pragma mark - Photo Methods
--(void) takePhotoUsingCamera: (UIImagePickerControllerSourceType) source   {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = source;
-    
-    [self presentViewController:picker animated:YES completion:NULL];
-}
-
-#pragma mark - Image Picker Controller delegate methods
-
-/**
- These two delegate methods cause
- */
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    
-    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    self.imageView.image = chosenImage;
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    
-}
 @end
