@@ -26,6 +26,10 @@
     NSLog(@"Take photo class");
     //-- Setup Capture Session.
     _captureSession = [[AVCaptureSession alloc] init];
+
+}
+
+-(void) liveCameraPeview    {
     
     //-- Creata a video device and input from that Device.  Add the input to the capture session.
     AVCaptureDevice * videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -46,29 +50,14 @@
     _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     
     [_previewLayer setFrame:CGRectMake(0, 0,
-                                       self.cameraPreviewView.frame.size.width,
-                                       self.cameraPreviewView.frame.size.height)];
+                                       self.view.frame.size.width,
+                                       self.view.frame.size.height)];
     
     //-- Add the layer to the view that should display the camera input
-    [self.cameraPreviewView.layer addSublayer:_previewLayer];
+    [self.view.layer addSublayer:_previewLayer];
     
     //-- Start the camera
     [_captureSession startRunning];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

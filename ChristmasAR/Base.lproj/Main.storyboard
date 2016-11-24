@@ -156,6 +156,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraPreviewView" destination="6CQ-jq-RbO" id="YxG-Vc-fRg"/>
+                        <outlet property="view" destination="9l7-K5-yVk" id="xSu-ED-fBr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VP1-XN-9f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
