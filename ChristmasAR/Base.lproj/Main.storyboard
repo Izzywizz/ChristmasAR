@@ -123,12 +123,53 @@
                     <navigationItem key="navigationItem" id="aJT-xT-0ap"/>
                     <connections>
                         <outlet property="emailAddressTextField" destination="oCa-6O-doS" id="XKK-en-cSq"/>
-                        <segue destination="PbD-HK-UF6" kind="show" identifier="GoToPhoto" id="Dg1-6e-m8T"/>
+                        <segue destination="abq-K3-E9f" kind="show" identifier="GoToPhoto" id="1F0-pT-2gK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kg-8J-7Z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1464.8" y="38.23088455772114"/>
+        </scene>
+        <!--Take Photo View Controller-->
+        <scene sceneID="84k-WO-xqB">
+            <objects>
+                <viewController id="abq-K3-E9f" customClass="TakePhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IqH-Qa-NJD"/>
+                        <viewControllerLayoutGuide type="bottom" id="rys-dz-ya3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GdB-ms-BEz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EOD-Z0-wvE" userLabel="photoView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKV-Jh-gjg" userLabel="takePhoto">
+                                <rect key="frame" x="147" y="566" width="80" height="81"/>
+                                <state key="normal" image="Capture"/>
+                                <connections>
+                                    <action selector="captureButtonPressed:" destination="abq-K3-E9f" eventType="touchUpInside" id="ftm-hr-Ndt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EOD-Z0-wvE" firstAttribute="top" secondItem="GdB-ms-BEz" secondAttribute="top" id="0Qy-lc-n6Y"/>
+                            <constraint firstItem="iKV-Jh-gjg" firstAttribute="centerX" secondItem="GdB-ms-BEz" secondAttribute="centerX" id="JP3-hc-5BA"/>
+                            <constraint firstItem="EOD-Z0-wvE" firstAttribute="leading" secondItem="GdB-ms-BEz" secondAttribute="leading" id="LXb-HN-zB3"/>
+                            <constraint firstItem="rys-dz-ya3" firstAttribute="top" secondItem="EOD-Z0-wvE" secondAttribute="bottom" id="U00-s6-fHt"/>
+                            <constraint firstItem="rys-dz-ya3" firstAttribute="top" secondItem="iKV-Jh-gjg" secondAttribute="bottom" constant="20" id="rI8-xB-dwf"/>
+                            <constraint firstAttribute="trailing" secondItem="EOD-Z0-wvE" secondAttribute="trailing" id="w35-H9-P7u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="EOD-Z0-wvE" id="SeA-6v-oxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8JD-eX-jnb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182" y="36"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Hwo-uB-z4p">
@@ -170,14 +211,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIt-Rj-4Nd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293.5999999999999" y="35.532233883058474"/>
+            <point key="canvasLocation" x="2852" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LTC-9D-uoP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yge-op-dg9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bMx-zE-6dM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bMx-zE-6dM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -192,6 +233,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Capture" width="80" height="81"/>
         <image name="Splash Screen" width="375" height="667"/>
         <image name="accept-button" width="363" height="71"/>
         <image name="characters" width="375" height="252"/>

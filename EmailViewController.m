@@ -9,6 +9,7 @@
 #import "EmailViewController.h"
 #import "SnowGeneratorView.h"
 #import "RRRegistration.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface EmailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressTextField;
@@ -22,6 +23,7 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     [self setupPlaceholderTextColour];
+    [self askForCameraPermission];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,6 +32,30 @@
 }
 
 #pragma mark - Helper Methods
+
+-(void) askForCameraPermission {
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    
+    if(status == AVAuthorizationStatusAuthorized) { // authorized
+        
+    }
+    else if(status == AVAuthorizationStatusDenied){ // denied
+        [self setupAlertSettingsBoxForCamera];
+    }
+    else if(status == AVAuthorizationStatusRestricted){ // restricted
+        
+    }
+    else if(status == AVAuthorizationStatusNotDetermined){ // not determined
+        
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            if(granted){ // Access has been granted ..do something
+                
+            } else { // Access denied ..do something
+                [self setupAlertSettingsBoxForCamera];
+            }
+        }];
+    }
+}
 
 -(void) setupPlaceholderTextColour  {
     NSString *placeholderText = @"Enter Email Address";
@@ -42,7 +68,27 @@
     }
 }
 
--(void) alertSetupandView  {
+-(void) setupAlertSettingsBoxForCamera   {
+    NSString *title;
+    title = @"Camera Permissions needed";
+    NSString *message = @"To use the app the camera access is needed, you must turn on 'While Using the App' in the Camera Settings for the app";
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Cancel Selected");
+    }];
+    UIAlertAction *settings = [UIAlertAction actionWithTitle:@"Setting" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        // Send the user to the Settings for this app
+        NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:settingsURL];
+    }];
+    
+    [alertVC addAction:cancel];
+    [alertVC addAction:settings];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+-(void) alertNoEmailView  {
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Email Not Correct" message:@"Please enter an email addresss" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"Dismiss");
@@ -59,11 +105,13 @@
         [self performSegueWithIdentifier:@"GoToPhoto" sender:self];
     } else  {
         NSLog(@"Alert Box");
-        [self alertSetupandView];
+        [self alertNoEmailView];
     }
 }
 - (IBAction)termsButtonPressed:(UIButton *)sender {
     NSLog(@"Terms Button Pressed");
 }
+
+
 
 @end
