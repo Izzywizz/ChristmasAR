@@ -187,7 +187,6 @@
 		431665341DE5C07C00324F40 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				43C1CEA31DE70C1B00BB3D3D /* Camera Helper */,
 				4326300C1DE6F5E7006F8CCB /* Validation */,
 				43EF26D61DE5EB8C0020D809 /* Snow Animation */,
 				43EF26A21DE5EB820020D809 /* IQKeyboardManager */,
@@ -202,13 +201,6 @@
 				4326300A1DE6F5E4006F8CCB /* RRRegistration.m */,
 			);
 			name = Validation;
-			sourceTree = "<group>";
-		};
-		43C1CEA31DE70C1B00BB3D3D /* Camera Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Camera Helper";
 			sourceTree = "<group>";
 		};
 		43EF269A1DE5E12B0020D809 /* Montserrat */ = {

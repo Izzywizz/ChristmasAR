@@ -24,6 +24,10 @@
     [self.navigationController setNavigationBarHidden:YES];
     [self setupPlaceholderTextColour];
     [self askForCameraPermission];
+
+}
+
+-(void) viewWillAppear:(BOOL)animated   {
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +39,7 @@
 
 -(void) askForCameraPermission {
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    
+    NSLog(@"status: %ld", (long)status);
     if(status == AVAuthorizationStatusAuthorized) { // authorized
         
     }
@@ -43,7 +47,7 @@
         [self setupAlertSettingsBoxForCamera];
     }
     else if(status == AVAuthorizationStatusRestricted){ // restricted
-        
+        [self setupAlertSettingsBoxForCamera];
     }
     else if(status == AVAuthorizationStatusNotDetermined){ // not determined
         
