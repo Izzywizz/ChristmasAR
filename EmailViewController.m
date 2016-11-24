@@ -6,16 +6,16 @@
 //  Copyright © 2016 Izzy. All rights reserved.
 //
 
-#import "TermsViewController.h"
+#import "EmailViewController.h"
 #import "SnowGeneratorView.h"
 #import "RRRegistration.h"
 
-@interface TermsViewController ()
+@interface EmailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressTextField;
 
 @end
 
-@implementation TermsViewController
+@implementation EmailViewController
 
 #pragma mark - UIView Methods
 - (void)viewDidLoad {

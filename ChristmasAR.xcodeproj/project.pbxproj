@@ -15,7 +15,7 @@
 		431665141DE5B8E900324F40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431665121DE5B8E900324F40 /* LaunchScreen.storyboard */; };
 		4316651F1DE5B8E900324F40 /* ChristmasARTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4316651E1DE5B8E900324F40 /* ChristmasARTests.m */; };
 		431665331DE5BF2300324F40 /* SnowFalling.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665321DE5BF2300324F40 /* SnowFalling.m */; };
-		431665371DE5D5E300324F40 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665361DE5D5E300324F40 /* TermsViewController.m */; };
+		431665371DE5D5E300324F40 /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665361DE5D5E300324F40 /* EmailViewController.m */; };
 		4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665391DE5D67A00324F40 /* SnowGeneratorView.m */; };
 		4326300B1DE6F5E4006F8CCB /* RRRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4326300A1DE6F5E4006F8CCB /* RRRegistration.m */; };
 		43EF269E1DE5E12B0020D809 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */; };
@@ -64,8 +64,8 @@
 		431665201DE5B8E900324F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		431665311DE5BF2300324F40 /* SnowFalling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowFalling.h; sourceTree = "<group>"; };
 		431665321DE5BF2300324F40 /* SnowFalling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowFalling.m; sourceTree = "<group>"; };
-		431665351DE5D5E300324F40 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermsViewController.h; path = ../TermsViewController.h; sourceTree = "<group>"; };
-		431665361DE5D5E300324F40 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsViewController.m; path = ../TermsViewController.m; sourceTree = "<group>"; };
+		431665351DE5D5E300324F40 /* EmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailViewController.h; path = ../EmailViewController.h; sourceTree = "<group>"; };
+		431665361DE5D5E300324F40 /* EmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EmailViewController.m; path = ../EmailViewController.m; sourceTree = "<group>"; };
 		431665381DE5D67A00324F40 /* SnowGeneratorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowGeneratorView.h; sourceTree = "<group>"; };
 		431665391DE5D67A00324F40 /* SnowGeneratorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowGeneratorView.m; sourceTree = "<group>"; };
 		432630091DE6F5E4006F8CCB /* RRRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRRegistration.h; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 				431665341DE5C07C00324F40 /* Helper Classes */,
 				431665071DE5B8E900324F40 /* AppDelegate.h */,
 				431665081DE5B8E900324F40 /* AppDelegate.m */,
-				431665351DE5D5E300324F40 /* TermsViewController.h */,
-				431665361DE5D5E300324F40 /* TermsViewController.m */,
+				431665351DE5D5E300324F40 /* EmailViewController.h */,
+				431665361DE5D5E300324F40 /* EmailViewController.m */,
 				4316650A1DE5B8E900324F40 /* ViewController.h */,
 				4316650B1DE5B8E900324F40 /* ViewController.m */,
 				4316650D1DE5B8E900324F40 /* Main.storyboard */,
@@ -413,7 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				431665371DE5D5E300324F40 /* TermsViewController.m in Sources */,
+				431665371DE5D5E300324F40 /* EmailViewController.m in Sources */,
 				43EF26CE1DE5EB820020D809 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				43EF26C81DE5EB820020D809 /* IQUIScrollView+Additions.m in Sources */,
 				43EF26CB1DE5EB820020D809 /* IQUIViewController+Additions.m in Sources */,
