@@ -142,26 +142,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6CQ-jq-RbO" userLabel="CameraStream">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jj-eq-yay">
+                                <rect key="frame" x="296" y="0.0" width="79" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="ToN-M7-PKb"/>
+                                    <constraint firstAttribute="height" constant="79" id="nHE-xm-8rO"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="share-button"/>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="2KC-sh-DtL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="6CQ-jq-RbO" secondAttribute="trailing" id="aJR-1d-fWe"/>
-                            <constraint firstItem="6CQ-jq-RbO" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" id="neW-D5-MHa"/>
-                            <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="6CQ-jq-RbO" secondAttribute="bottom" id="rF2-A8-uot"/>
-                            <constraint firstItem="6CQ-jq-RbO" firstAttribute="leading" secondItem="9l7-K5-yVk" secondAttribute="leading" id="zqb-bO-Amr"/>
+                            <constraint firstAttribute="trailing" secondItem="1Jj-eq-yay" secondAttribute="trailing" id="e6h-dQ-PWI"/>
+                            <constraint firstItem="1Jj-eq-yay" firstAttribute="top" secondItem="9l7-K5-yVk" secondAttribute="top" id="ugT-9h-3OH"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="cameraPreviewView" destination="6CQ-jq-RbO" id="YxG-Vc-fRg"/>
                         <outlet property="view" destination="9l7-K5-yVk" id="xSu-ED-fBr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VP1-XN-9f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216.8" y="765.96701649175418"/>
+            <point key="canvasLocation" x="981.60000000000002" y="767.76611694152928"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Hwo-uB-z4p">
@@ -230,5 +235,6 @@
         <image name="characters" width="375" height="252"/>
         <image name="email-icon" width="13" height="11"/>
         <image name="photo" width="375" height="667"/>
+        <image name="share-button" width="28" height="33"/>
     </resources>
 </document>

@@ -14,31 +14,36 @@
 
 @property AVCaptureVideoPreviewLayer *previewLayer;
 @property AVCaptureSession *captureSession;
-@property (weak, nonatomic) IBOutlet UIView *cameraPreviewView;
+@property AVCaptureDevice *backCamera;
+@property AVCaptureDevice *frontCamera;
 
 @end
 
 @implementation TakePhotoViewController
 
+#pragma mark - UI View Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"Take photo class");
     //-- Setup Capture Session.
     _captureSession = [[AVCaptureSession alloc] init];
+    [self filterThroughDevices];
+    [self liveCameraPeview];
 
 }
 
+#pragma mark - Camera Methods
 -(void) liveCameraPeview    {
     
     //-- Creata a video device and input from that Device.  Add the input to the capture session.
-    AVCaptureDevice * videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if(videoDevice == nil)
-        assert(0);
+//    AVCaptureDevice * videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+//    if(videoDevice == nil)
+//        assert(0);
     
     //-- Add the device to the session.
     NSError *error;
-    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:_backCamera
                                                                         error:&error];
     if(error)
         assert(0);
@@ -59,5 +64,35 @@
     //-- Start the camera
     [_captureSession startRunning];
 }
+
+#pragma mark - Action Methods
+- (IBAction)shareButtonPressed:(UIButton *)sender {
+
+}
+
+-(void) filterThroughDevices    {
+    NSArray *devices = [AVCaptureDevice devices];
+    
+    for (AVCaptureDevice *device in devices) {
+        
+        NSLog(@"Device name: %@", [device localizedName]);
+        
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            
+            if ([device position] == AVCaptureDevicePositionBack) {
+                NSLog(@"Device position : back");
+                _backCamera = device;
+            }
+            else {
+                NSLog(@"Device position : front");
+                _frontCamera = device;
+                
+            }
+        }
+    }
+    
+
+}
+
 
 @end
