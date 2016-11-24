@@ -105,12 +105,12 @@
 - (IBAction)acceptButtonPressed:(UIButton *)sender {
     RRRegistration *validation = [RRRegistration new];
     
-    if ([validation validateTextField:_emailAddressTextField]) {
+//    if ([validation validateTextField:_emailAddressTextField]) {
         [self performSegueWithIdentifier:@"GoToTakePhoto" sender:self];
-    } else  {
-        NSLog(@"Alert Box");
-        [self alertNoEmailView];
-    }
+//    } else  {
+//        NSLog(@"Alert Box");
+//        [self alertNoEmailView];
+//    }
 }
 - (IBAction)termsButtonPressed:(UIButton *)sender {
     NSLog(@"Terms Button Pressed");
