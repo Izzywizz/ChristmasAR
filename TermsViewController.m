@@ -8,6 +8,7 @@
 
 #import "TermsViewController.h"
 #import "SnowGeneratorView.h"
+#import "RRRegistration.h"
 
 @interface TermsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressTextField;
@@ -41,9 +42,25 @@
     }
 }
 
+-(void) alertSetupandView  {
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Email Not Correct" message:@"Please enter an email addresss" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *dismiss = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Dismiss");
+    }];
+    [alertVC addAction:dismiss];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
 #pragma mark - Action Methods
 - (IBAction)acceptButtonPressed:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"GoToPhoto" sender:self];
+    RRRegistration *validation = [RRRegistration new];
+    
+    if ([validation validateTextField:_emailAddressTextField]) {
+        [self performSegueWithIdentifier:@"GoToPhoto" sender:self];
+    } else  {
+        NSLog(@"Alert Box");
+        [self alertSetupandView];
+    }
 }
 - (IBAction)termsButtonPressed:(UIButton *)sender {
     NSLog(@"Terms Button Pressed");

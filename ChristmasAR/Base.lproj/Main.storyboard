@@ -32,20 +32,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash Screen" translatesAutoresizingMaskIntoConstraints="NO" id="sRp-1D-Sqp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6O-doS">
-                                <rect key="frame" x="34" y="396" width="325" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6O-doS">
+                                <rect key="frame" x="34" y="395" width="325" height="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app will blow your child imagination with use of clever imagery and positioning. Take a pic and see for yourself!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dt4-XS-VXd" userLabel="Placeholder Text">
-                                <rect key="frame" x="20" y="292.5" width="335" height="83"/>
+                                <rect key="frame" x="20" y="292" width="335" height="83"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-t2-c5e" userLabel="Accept">
-                                <rect key="frame" x="0.0" y="440" width="375" height="71"/>
+                                <rect key="frame" x="0.0" y="439" width="375" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="Gxq-8z-w5K"/>
                                 </constraints>
@@ -56,10 +56,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-icon" translatesAutoresizingMaskIntoConstraints="NO" id="MZ0-PC-i7p" userLabel="email">
-                                <rect key="frame" x="16" y="401" width="13" height="11"/>
+                                <rect key="frame" x="16" y="400" width="13" height="11"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fUT-4Y-U47">
-                                <rect key="frame" x="113" y="519" width="148" height="26"/>
+                                <rect key="frame" x="113" y="518" width="148" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="f0I-Xp-GC9"/>
                                     <constraint firstAttribute="height" constant="26" id="oei-8k-SJW"/>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-bl-fo7" userLabel="Terms Button">
-                                <rect key="frame" x="113" y="517" width="148" height="30"/>
+                                <rect key="frame" x="113" y="516" width="148" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Bs9-B8-5gy"/>
                                     <constraint firstAttribute="width" constant="148" id="BuV-le-DZq"/>
@@ -86,19 +86,29 @@
                                     <action selector="termsButtonPressed:" destination="KXS-e7-bUZ" eventType="touchUpInside" id="2cO-W1-EeS"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2T-Ax-q0a" userLabel="Line">
+                                <rect key="frame" x="16" y="420" width="343" height="3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="WM1-96-Su5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sRp-1D-Sqp" secondAttribute="trailing" id="3au-l3-LAp"/>
                             <constraint firstItem="Dt4-XS-VXd" firstAttribute="centerX" secondItem="VaZ-Rt-GoW" secondAttribute="centerX" id="4m3-8u-wKv"/>
                             <constraint firstItem="Dt4-XS-VXd" firstAttribute="centerY" secondItem="VaZ-Rt-GoW" secondAttribute="centerY" id="5nD-N1-4A2"/>
                             <constraint firstItem="oCa-6O-doS" firstAttribute="leading" secondItem="MZ0-PC-i7p" secondAttribute="trailing" constant="5" id="6pd-DL-K7m"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="C2T-Ax-q0a" secondAttribute="leading" id="6sK-QY-pDl"/>
                             <constraint firstItem="Vav-t2-c5e" firstAttribute="top" secondItem="oCa-6O-doS" secondAttribute="bottom" constant="23.5" id="8ow-j4-7mO"/>
                             <constraint firstItem="nXc-eT-2RR" firstAttribute="top" secondItem="sRp-1D-Sqp" secondAttribute="bottom" id="Ck5-aU-N6n"/>
                             <constraint firstAttribute="trailing" secondItem="Dt4-XS-VXd" secondAttribute="trailing" constant="20" id="Dlk-wh-Nhj"/>
                             <constraint firstItem="fUT-4Y-U47" firstAttribute="top" secondItem="Vav-t2-c5e" secondAttribute="bottom" constant="8" id="E1j-ee-bRa"/>
                             <constraint firstItem="Vav-t2-c5e" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" id="KnZ-YT-GK9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C2T-Ax-q0a" secondAttribute="trailing" id="TR0-Tm-3c9"/>
                             <constraint firstItem="wdf-bl-fo7" firstAttribute="centerX" secondItem="VaZ-Rt-GoW" secondAttribute="centerX" id="Txf-Ng-Vs2"/>
                             <constraint firstItem="MZ0-PC-i7p" firstAttribute="top" secondItem="Dt4-XS-VXd" secondAttribute="bottom" constant="25.5" id="ULI-6I-fic"/>
+                            <constraint firstItem="C2T-Ax-q0a" firstAttribute="top" secondItem="oCa-6O-doS" secondAttribute="bottom" constant="4" id="W8i-I6-DQf"/>
                             <constraint firstItem="fUT-4Y-U47" firstAttribute="centerX" secondItem="VaZ-Rt-GoW" secondAttribute="centerX" id="WyZ-kJ-DaG"/>
                             <constraint firstItem="Dt4-XS-VXd" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" constant="20" id="Zct-MY-P6J"/>
                             <constraint firstItem="sRp-1D-Sqp" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" id="eCl-lf-qnn"/>
@@ -118,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Kg-8J-7Z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="526" y="39"/>
+            <point key="canvasLocation" x="525.60000000000002" y="38.23088455772114"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Hwo-uB-z4p">

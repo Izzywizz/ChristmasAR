@@ -17,6 +17,7 @@
 		431665331DE5BF2300324F40 /* SnowFalling.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665321DE5BF2300324F40 /* SnowFalling.m */; };
 		431665371DE5D5E300324F40 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665361DE5D5E300324F40 /* TermsViewController.m */; };
 		4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665391DE5D67A00324F40 /* SnowGeneratorView.m */; };
+		4326300B1DE6F5E4006F8CCB /* RRRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4326300A1DE6F5E4006F8CCB /* RRRegistration.m */; };
 		43EF269E1DE5E12B0020D809 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */; };
 		43EF269F1DE5E12B0020D809 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */; };
 		43EF26A01DE5E12B0020D809 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269D1DE5E12B0020D809 /* OFL.txt */; };
@@ -67,6 +68,8 @@
 		431665361DE5D5E300324F40 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TermsViewController.m; path = ../TermsViewController.m; sourceTree = "<group>"; };
 		431665381DE5D67A00324F40 /* SnowGeneratorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowGeneratorView.h; sourceTree = "<group>"; };
 		431665391DE5D67A00324F40 /* SnowGeneratorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowGeneratorView.m; sourceTree = "<group>"; };
+		432630091DE6F5E4006F8CCB /* RRRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRRegistration.h; sourceTree = "<group>"; };
+		4326300A1DE6F5E4006F8CCB /* RRRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRRegistration.m; sourceTree = "<group>"; };
 		43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		43EF269D1DE5E12B0020D809 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -179,10 +182,20 @@
 		431665341DE5C07C00324F40 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4326300C1DE6F5E7006F8CCB /* Validation */,
 				43EF26D61DE5EB8C0020D809 /* Snow Animation */,
 				43EF26A21DE5EB820020D809 /* IQKeyboardManager */,
 			);
 			name = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		4326300C1DE6F5E7006F8CCB /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				432630091DE6F5E4006F8CCB /* RRRegistration.h */,
+				4326300A1DE6F5E4006F8CCB /* RRRegistration.m */,
+			);
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		43EF269A1DE5E12B0020D809 /* Montserrat */ = {
@@ -416,6 +429,7 @@
 				43EF26CD1DE5EB820020D809 /* IQKeyboardManager.m in Sources */,
 				43EF26D31DE5EB820020D809 /* IQToolbar.m in Sources */,
 				43EF26D21DE5EB820020D809 /* IQTitleBarButtonItem.m in Sources */,
+				4326300B1DE6F5E4006F8CCB /* RRRegistration.m in Sources */,
 				431665091DE5B8E900324F40 /* AppDelegate.m in Sources */,
 				43EF26CF1DE5EB820020D809 /* IQTextView.m in Sources */,
 				431665061DE5B8E900324F40 /* main.m in Sources */,
