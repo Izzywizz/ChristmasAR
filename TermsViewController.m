@@ -28,7 +28,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Helper Functions
+#pragma mark - Helper Methods
 
 -(void) setupPlaceholderTextColour  {
     NSString *placeholderText = @"Enter Email Address";
@@ -44,6 +44,9 @@
 #pragma mark - Action Methods
 - (IBAction)acceptButtonPressed:(UIButton *)sender {
     [self performSegueWithIdentifier:@"GoToPhoto" sender:self];
+}
+- (IBAction)termsButtonPressed:(UIButton *)sender {
+    NSLog(@"Terms Button Pressed");
 }
 
 @end

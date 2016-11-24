@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,8 +32,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash Screen" translatesAutoresizingMaskIntoConstraints="NO" id="sRp-1D-Sqp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6O-doS">
-                                <rect key="frame" x="37" y="396" width="322" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6O-doS">
+                                <rect key="frame" x="34" y="396" width="325" height="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -59,6 +58,34 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-icon" translatesAutoresizingMaskIntoConstraints="NO" id="MZ0-PC-i7p" userLabel="email">
                                 <rect key="frame" x="16" y="401" width="13" height="11"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fUT-4Y-U47">
+                                <rect key="frame" x="113" y="519" width="148" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="f0I-Xp-GC9"/>
+                                    <constraint firstAttribute="height" constant="26" id="oei-8k-SJW"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Terms &amp; Conditions">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="15" name="Montserrat-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-bl-fo7" userLabel="Terms Button">
+                                <rect key="frame" x="113" y="517" width="148" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bs9-B8-5gy"/>
+                                    <constraint firstAttribute="width" constant="148" id="BuV-le-DZq"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="termsButtonPressed:" destination="KXS-e7-bUZ" eventType="touchUpInside" id="2cO-W1-EeS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sRp-1D-Sqp" secondAttribute="trailing" id="3au-l3-LAp"/>
@@ -68,12 +95,16 @@
                             <constraint firstItem="Vav-t2-c5e" firstAttribute="top" secondItem="oCa-6O-doS" secondAttribute="bottom" constant="23.5" id="8ow-j4-7mO"/>
                             <constraint firstItem="nXc-eT-2RR" firstAttribute="top" secondItem="sRp-1D-Sqp" secondAttribute="bottom" id="Ck5-aU-N6n"/>
                             <constraint firstAttribute="trailing" secondItem="Dt4-XS-VXd" secondAttribute="trailing" constant="20" id="Dlk-wh-Nhj"/>
+                            <constraint firstItem="fUT-4Y-U47" firstAttribute="top" secondItem="Vav-t2-c5e" secondAttribute="bottom" constant="8" id="E1j-ee-bRa"/>
                             <constraint firstItem="Vav-t2-c5e" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" id="KnZ-YT-GK9"/>
+                            <constraint firstItem="wdf-bl-fo7" firstAttribute="centerX" secondItem="VaZ-Rt-GoW" secondAttribute="centerX" id="Txf-Ng-Vs2"/>
                             <constraint firstItem="MZ0-PC-i7p" firstAttribute="top" secondItem="Dt4-XS-VXd" secondAttribute="bottom" constant="25.5" id="ULI-6I-fic"/>
+                            <constraint firstItem="fUT-4Y-U47" firstAttribute="centerX" secondItem="VaZ-Rt-GoW" secondAttribute="centerX" id="WyZ-kJ-DaG"/>
                             <constraint firstItem="Dt4-XS-VXd" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" constant="20" id="Zct-MY-P6J"/>
                             <constraint firstItem="sRp-1D-Sqp" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leading" id="eCl-lf-qnn"/>
                             <constraint firstItem="sRp-1D-Sqp" firstAttribute="top" secondItem="p59-pg-g7o" secondAttribute="bottom" constant="-64" id="hRT-WX-Dal"/>
                             <constraint firstItem="oCa-6O-doS" firstAttribute="top" secondItem="Dt4-XS-VXd" secondAttribute="bottom" constant="20" id="m4w-5j-Wvd"/>
+                            <constraint firstItem="wdf-bl-fo7" firstAttribute="top" secondItem="Vav-t2-c5e" secondAttribute="bottom" constant="6" id="s2b-Yc-mnP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oCa-6O-doS" secondAttribute="trailing" id="wtV-bS-QzA"/>
                             <constraint firstAttribute="trailing" secondItem="Vav-t2-c5e" secondAttribute="trailing" id="yYk-F4-fkd"/>
                             <constraint firstItem="MZ0-PC-i7p" firstAttribute="leading" secondItem="VaZ-Rt-GoW" secondAttribute="leadingMargin" id="zM0-ec-Eyf"/>
@@ -147,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xib-dz-aeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994" y="41"/>
+            <point key="canvasLocation" x="-775" y="39"/>
         </scene>
     </scenes>
     <resources>
