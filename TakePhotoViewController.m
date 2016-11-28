@@ -29,13 +29,12 @@
 #pragma mark - UI View Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSLog(@"Take photo class");
     [self filterThroughDevices];
     [self liveCameraFeed];
     
-    _isArActivated = true; //intially set to 0
-    _reTakePhotoButton.hidden = YES; //hide the retake button intitally
+    _isArActivated = true; //intially set to false/true
+    _reTakePhotoButton.hidden = true; //hide the retake button intitally
+    _shareButton.hidden = true;
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
@@ -101,7 +100,7 @@
     
     //-- Add the device to the session.
     NSError *error;
-    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:_backCamera
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice
                                                                         error:&error];
     if(error)
         assert(0);
@@ -206,7 +205,6 @@
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
         UIImage *image = [[UIImage alloc] initWithData:imageData];
         //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil); //save to album
-        //set imge with chracters if ar is actiavted/ found
         
         if (_isArActivated) {
 //            [self setupPresentsAndSnowAnimation];
@@ -216,11 +214,11 @@
             _imagePreview.image = image; //preview the image WITHOUT presents
             [self takeScreenshot];
         }
-        self.imagePreview.hidden = NO;
-        self.reTakePhotoButton.hidden = NO;
-        _captureSession = nil;
-        _stillImageOutput = nil;
     }];
+    
+    self.shareButton.hidden = false;
+    self.imagePreview.hidden = NO;
+    self.reTakePhotoButton.hidden = NO;
 }
 
 #pragma mark - Action Methods
