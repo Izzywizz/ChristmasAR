@@ -267,7 +267,9 @@
 }
 
 - (IBAction)reTakenPhotoButton:(UIButton *)sender {
-    self.imagePreview.hidden = YES;
+    self.imagePreview.image = [UIImage imageNamed:@""];
+    self.imagePreview.hidden = true;
+    self.shareButton.hidden = true;
     [self liveCameraFeed];
     
 }
