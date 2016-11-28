@@ -17,6 +17,7 @@
 @property AVCaptureDevice *backCamera;
 @property AVCaptureDevice *frontCamera;
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
+@property AVCaptureStillImageOutput *stillImageOutput;
 
 @end
 
@@ -50,7 +51,13 @@
         assert(0);
     
     [_captureSession addInput:input];
-    
+
+    // Configure image output
+    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys: AVVideoCodecJPEG, AVVideoCodecKey, nil];
+    [self.stillImageOutput setOutputSettings:outputSettings];
+    [_captureSession addOutput:self.stillImageOutput];
+
     //-- Configure the preview layer
     _previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
     _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
@@ -64,6 +71,10 @@
     
     //-- Start the camera
     [_captureSession startRunning];
+}
+
+-(void) obtainCaptureOutput {
+    
 }
 
 -(void) filterThroughDevices    {
@@ -100,11 +111,43 @@
     return nil;
 }
 
-#pragma mark - Action Methods
+- (void)captureStillImageAsynchronouslyFromConnection:(AVCaptureConnection *)connection
+                                    completionHandler:(void (^)(CMSampleBufferRef imageDataSampleBuffer, NSError *error))handler
+{
+    
+}
 
+-(void) captureNow {
+    AVCaptureConnection *videoConnection = nil;
+    for (AVCaptureConnection *connection in self.stillImageOutput.connections) {
+        for (AVCaptureInputPort *port in [connection inputPorts]) {
+            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) { break; }
+    }
+    
+    NSLog(@"about to request a capture from: %@", self.stillImageOutput);
+    __weak typeof(self) weakSelf = self;
+    [self.stillImageOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler: ^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
+        
+        NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
+        UIImage *image = [[UIImage alloc] initWithData:imageData];
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil); //save to album
+        
+//        [weakSelf displayImage:image];
+    }];
+}
 // note that `AVCaptureSession * session`
 // make sure you have this method in your class
 //
+
+
+
+#pragma mark - Action Methods
+
 
 - (IBAction)switchCameraButtonPressed:(UIButton *)sender {
     NSLog(@"Switch Camera");
@@ -147,6 +190,7 @@
 
 - (IBAction)takePhotoButtonPressed:(UIButton *)sender {
     NSLog(@"Take PHoto");
+    [self captureNow];
 }
 
 @end
