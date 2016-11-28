@@ -33,19 +33,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oCa-6O-doS">
-                                <rect key="frame" x="38" y="419.33333333333331" width="356" height="21"/>
+                                <rect key="frame" x="38" y="419.66666666666669" width="356" height="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app will blow your child imagination with use of clever imagery and positioning. Take a pic and see for yourself!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dt4-XS-VXd" userLabel="Placeholder Text">
-                                <rect key="frame" x="20" y="337" width="374" height="62.333333333333314"/>
+                                <rect key="frame" x="20" y="337.33333333333331" width="374" height="62.333333333333371"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-t2-c5e" userLabel="Accept">
-                                <rect key="frame" x="0.0" y="463.33333333333337" width="414" height="71.000000000000114"/>
+                                <rect key="frame" x="0.0" y="463.66666666666663" width="414" height="70.999999999999886"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="Gxq-8z-w5K"/>
                                 </constraints>
@@ -56,10 +56,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-icon" translatesAutoresizingMaskIntoConstraints="NO" id="MZ0-PC-i7p" userLabel="email">
-                                <rect key="frame" x="20" y="424.33333333333331" width="13" height="11"/>
+                                <rect key="frame" x="20" y="424.66666666666669" width="13" height="11"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fUT-4Y-U47">
-                                <rect key="frame" x="133" y="542.33333333333337" width="148" height="26"/>
+                                <rect key="frame" x="133" y="542.66666666666663" width="148" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="f0I-Xp-GC9"/>
                                     <constraint firstAttribute="height" constant="26" id="oei-8k-SJW"/>
@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdf-bl-fo7" userLabel="Terms Button">
-                                <rect key="frame" x="133" y="540.33333333333337" width="148" height="30"/>
+                                <rect key="frame" x="133" y="540.66666666666663" width="148" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Bs9-B8-5gy"/>
                                     <constraint firstAttribute="width" constant="148" id="BuV-le-DZq"/>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2T-Ax-q0a" userLabel="Line">
-                                <rect key="frame" x="20" y="444.33333333333331" width="374" height="3"/>
+                                <rect key="frame" x="20" y="444.66666666666669" width="374" height="3"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="WM1-96-Su5"/>
@@ -180,11 +180,18 @@
                                     <action selector="shareButtonPresssed:" destination="aet-2v-fHF" eventType="touchUpInside" id="zr4-gA-2X5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9t-Fx-XXI" userLabel="reTake Photo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9t-Fx-XXI" userLabel="Save Photo">
                                 <rect key="frame" x="162" y="626" width="90" height="90"/>
-                                <state key="normal" title="RETAKE" backgroundImage="retake"/>
+                                <state key="normal" title="SAVE" backgroundImage="retake"/>
                                 <connections>
-                                    <action selector="reTakenPhotoButton:" destination="aet-2v-fHF" eventType="touchUpInside" id="f3P-Tg-lZ7"/>
+                                    <action selector="saveButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="15v-Vc-E6P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtV-A3-f5c">
+                                <rect key="frame" x="20" y="20" width="28" height="28"/>
+                                <state key="normal" backgroundImage="close"/>
+                                <connections>
+                                    <action selector="reTakenPhotoButton:" destination="aet-2v-fHF" eventType="touchUpInside" id="3P0-MN-zGE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -194,6 +201,7 @@
                             <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="2po-g6-QNV" secondAttribute="bottom" id="8hQ-oX-Peq"/>
                             <constraint firstItem="J2m-kg-SQe" firstAttribute="leading" secondItem="9l7-K5-yVk" secondAttribute="leading" id="93O-YM-zbP"/>
                             <constraint firstAttribute="trailing" secondItem="J2m-kg-SQe" secondAttribute="trailing" id="B9k-ka-zMH"/>
+                            <constraint firstItem="BtV-A3-f5c" firstAttribute="top" secondItem="9l7-K5-yVk" secondAttribute="top" constant="20" id="Byx-A6-NZC"/>
                             <constraint firstItem="7x2-LG-eE9" firstAttribute="centerX" secondItem="9l7-K5-yVk" secondAttribute="centerX" id="Lpd-u9-31f"/>
                             <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="I9t-Fx-XXI" secondAttribute="bottom" constant="20" id="O8c-Yq-9Uv"/>
                             <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="vhi-5e-EzF" secondAttribute="bottom" id="OGL-C9-nn3"/>
@@ -204,6 +212,7 @@
                             <constraint firstAttribute="trailing" secondItem="vhi-5e-EzF" secondAttribute="trailing" id="dqq-rS-14T"/>
                             <constraint firstAttribute="trailing" secondItem="AFw-VR-6Eg" secondAttribute="trailing" constant="16" id="hja-tL-Cxe"/>
                             <constraint firstItem="AFw-VR-6Eg" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" constant="5" id="lwO-42-nTT"/>
+                            <constraint firstItem="BtV-A3-f5c" firstAttribute="leading" secondItem="9l7-K5-yVk" secondAttribute="leading" constant="20" id="oKg-TX-ZLW"/>
                             <constraint firstItem="3GK-fz-yJK" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" constant="5" id="ogI-e8-6no"/>
                             <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="J2m-kg-SQe" secondAttribute="bottom" id="tzz-EK-yXT"/>
                             <constraint firstItem="I9t-Fx-XXI" firstAttribute="centerX" secondItem="9l7-K5-yVk" secondAttribute="centerX" id="uJN-Lm-zj9"/>
@@ -215,7 +224,8 @@
                         <outlet property="cameraView" destination="vhi-5e-EzF" id="AWk-lQ-Cdq"/>
                         <outlet property="imagePreview" destination="2po-g6-QNV" id="xmF-Zk-2kR"/>
                         <outlet property="presentsPlaceholderImage" destination="J2m-kg-SQe" id="aeD-ee-wpQ"/>
-                        <outlet property="reTakePhotoButton" destination="I9t-Fx-XXI" id="dNT-eP-sJl"/>
+                        <outlet property="reTakePhotoButton" destination="BtV-A3-f5c" id="2eP-64-EX2"/>
+                        <outlet property="saveButton" destination="I9t-Fx-XXI" id="1Z4-b0-D5N"/>
                         <outlet property="shareButton" destination="AFw-VR-6Eg" id="9lk-6y-rsE"/>
                         <outlet property="switchCameraButton" destination="3GK-fz-yJK" id="vqh-Un-HHz"/>
                         <outlet property="view" destination="9l7-K5-yVk" id="xSu-ED-fBr"/>
@@ -291,6 +301,7 @@
         <image name="Splash Screen" width="375" height="667"/>
         <image name="accept-button" width="363" height="71"/>
         <image name="characters" width="375" height="252"/>
+        <image name="close" width="28" height="28"/>
         <image name="email-icon" width="13" height="11"/>
         <image name="photo" width="375" height="667"/>
         <image name="presents" width="375" height="104"/>

@@ -29,14 +29,15 @@
 #pragma mark - UI View Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self liveCameraFeed];
     
     _isArActivated = true; //Handles the AR Presents/snowing/ raindeeer flashing mechanic.
     _reTakePhotoButton.hidden = true; //hide the retake button intitally
     _shareButton.hidden = true;
+    _saveButton.hidden = true;
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
+    [self liveCameraFeed]; //needs to be called everytime the view dissapears
     if (_isArActivated) {
         NSLog(@"activate the AR world");
         [self setupPresentsAndSnowAnimation];
@@ -90,6 +91,7 @@
 -(void) liveCameraFeed  {
     
     _reTakePhotoButton.hidden = true;
+    _saveButton.hidden = true;
     //-- Setup Capture Session.
     _captureSession = [[AVCaptureSession alloc] init];
     //-- Creata a video device and input from that Device.  Add the input to the capture session.
@@ -128,7 +130,7 @@
 }
 
 //GEt the image with the presents
--(void) takeScreenshot {
+-(UIImage *) takeScreenshot {
     
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
         UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0.0);
@@ -141,10 +143,13 @@
     UIGraphicsEndImageContext();
     NSData *imageData = UIImagePNGRepresentation(image);
     if (imageData) {
-        UIImageWriteToSavedPhotosAlbum([UIImage imageWithData:imageData], nil, nil, nil);
+        //        UIImageWriteToSavedPhotosAlbum([UIImage imageWithData:imageData], nil, nil, nil);
+        return [UIImage imageWithData:imageData];
     } else {
         NSLog(@"error while taking screenshot");
     }
+    
+    return nil;
 }
 
 - (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position
@@ -183,11 +188,12 @@
         //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil); //save to album
         
         if (_isArActivated) {
-//            [self setupPresentsAndSnowAnimation];
+            //            [self setupPresentsAndSnowAnimation];
             _imagePreview.image = image; //preview the image with the new presents
-            [self takeScreenshot];
+            _imagePreview.image = [self takeScreenshot];
         } else  {
             _imagePreview.image = image; //preview the image WITHOUT presents
+            _imagePreview.image = [self takeScreenshot];
             [self takeScreenshot];
         }
     }];
@@ -237,6 +243,7 @@
     NSLog(@"Take PHoto");
     [self captureNow];
     [_presentsPlaceholderImage stopAnimating];
+    _saveButton.hidden = false;
 }
 
 - (IBAction)shareButtonPresssed:(UIButton *)sender {
@@ -244,11 +251,23 @@
 }
 
 - (IBAction)reTakenPhotoButton:(UIButton *)sender {
+    [self liveCameraFeed];
+    self.imagePreview.hidden = true;
+    self.shareButton.hidden = true;
+    self.imagePreview.image = [UIImage imageNamed:@""];
+
+}
+
+- (IBAction)saveButtonPressed:(UIButton *)sender {
+    if ([self takeScreenshot] == nil) {
+        NSLog(@"NIl");
+    }
+    UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, nil, nil);
     self.imagePreview.image = [UIImage imageNamed:@""];
     self.imagePreview.hidden = true;
     self.shareButton.hidden = true;
+    _saveButton.hidden = true;
     [self liveCameraFeed];
-    
 }
 
 @end

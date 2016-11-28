@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *switchCameraButton;
 @property (weak, nonatomic) IBOutlet UIButton *reTakePhotoButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end
