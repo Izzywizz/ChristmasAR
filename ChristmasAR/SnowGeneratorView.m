@@ -17,6 +17,7 @@
  on from the class. If you wish to add more snowflakes to the view ensure they are named snow-flakes-%d and increase the count on the loop
  */
 -(UIView *) generateSnowflakes: (UIView *) view  {
+    
     for (int i = 1; i < 4; i++) {
         SnowFalling *snow = [[SnowFalling alloc] initWithView:view];
         // personalize values (optional)
@@ -25,6 +26,7 @@
         snow.imageOfFlake = [UIImage imageNamed:[NSString stringWithFormat:@"snow-flake-%d.png", i]];
         
         snow.hidden = NO;
+    
     }
     
     return view;

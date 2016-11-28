@@ -29,10 +29,9 @@
 #pragma mark - UI View Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self filterThroughDevices];
     [self liveCameraFeed];
     
-    _isArActivated = true; //intially set to false/true
+    _isArActivated = true; //Handles the AR Presents/snowing/ raindeeer flashing mechanic.
     _reTakePhotoButton.hidden = true; //hide the retake button intitally
     _shareButton.hidden = true;
 }
@@ -148,29 +147,6 @@
     }
 }
 
-
--(void) filterThroughDevices    {
-    NSArray *devices = [AVCaptureDevice devices];
-    
-    for (AVCaptureDevice *device in devices) {
-        
-        NSLog(@"Device name: %@", [device localizedName]);
-        
-        if ([device hasMediaType:AVMediaTypeVideo]) {
-            
-            if ([device position] == AVCaptureDevicePositionBack) {
-                NSLog(@"Device position : back");
-                _backCamera = device;
-            }
-            else {
-                NSLog(@"Device position : front");
-                _frontCamera = device;
-                
-            }
-        }
-    }
-}
-
 - (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position
 {
     NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
@@ -260,6 +236,7 @@
 - (IBAction)takePhotoButtonPressed:(UIButton *)sender {
     NSLog(@"Take PHoto");
     [self captureNow];
+    [_presentsPlaceholderImage stopAnimating];
 }
 
 - (IBAction)shareButtonPresssed:(UIButton *)sender {
