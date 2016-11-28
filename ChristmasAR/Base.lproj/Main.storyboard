@@ -144,20 +144,41 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhi-5e-EzF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.8980392157" green="0.29411764709999999" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x2-LG-eE9">
-                                <rect key="frame" x="120" y="293" width="134" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Capture"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presents" translatesAutoresizingMaskIntoConstraints="NO" id="J2m-kg-SQe">
+                                <rect key="frame" x="0.0" y="563" width="375" height="104"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GK-fz-yJK" userLabel="SwitchCamera">
+                                <rect key="frame" x="333" y="25" width="27" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="Abz-LA-pkH"/>
+                                    <constraint firstAttribute="height" constant="28" id="xQD-Up-2yR"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="switch-camera"/>
+                                <connections>
+                                    <action selector="switchCameraButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="i5P-0v-dHC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x2-LG-eE9" userLabel="TakePhoto">
+                                <rect key="frame" x="147" y="586" width="80" height="81"/>
+                                <state key="normal" image="Capture"/>
+                                <connections>
+                                    <action selector="takePhotoButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="8Tr-AT-jIO"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="7x2-LG-eE9" secondAttribute="bottom" id="36D-Lc-38P"/>
                             <constraint firstItem="vhi-5e-EzF" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" constant="-20" id="4YC-Nh-Wf0"/>
+                            <constraint firstItem="J2m-kg-SQe" firstAttribute="leading" secondItem="9l7-K5-yVk" secondAttribute="leading" id="93O-YM-zbP"/>
+                            <constraint firstAttribute="trailing" secondItem="J2m-kg-SQe" secondAttribute="trailing" id="B9k-ka-zMH"/>
+                            <constraint firstItem="7x2-LG-eE9" firstAttribute="centerX" secondItem="9l7-K5-yVk" secondAttribute="centerX" id="Lpd-u9-31f"/>
                             <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="vhi-5e-EzF" secondAttribute="bottom" id="OGL-C9-nn3"/>
+                            <constraint firstAttribute="trailing" secondItem="3GK-fz-yJK" secondAttribute="trailing" constant="15" id="SVG-Aq-OPM"/>
                             <constraint firstItem="vhi-5e-EzF" firstAttribute="leading" secondItem="9l7-K5-yVk" secondAttribute="leading" id="dTa-Ka-nas"/>
                             <constraint firstAttribute="trailing" secondItem="vhi-5e-EzF" secondAttribute="trailing" id="dqq-rS-14T"/>
+                            <constraint firstItem="3GK-fz-yJK" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" constant="5" id="ogI-e8-6no"/>
+                            <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="J2m-kg-SQe" secondAttribute="bottom" id="tzz-EK-yXT"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
@@ -238,5 +259,7 @@
         <image name="characters" width="375" height="252"/>
         <image name="email-icon" width="13" height="11"/>
         <image name="photo" width="375" height="667"/>
+        <image name="presents" width="375" height="104"/>
+        <image name="switch-camera" width="27" height="28"/>
     </resources>
 </document>

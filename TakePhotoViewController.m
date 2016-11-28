@@ -27,6 +27,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"Take photo class");
+    [self filterThroughDevices];
+    [self liveCameraFeed];
+
+}
+
+#pragma mark - Camera Methods
+
+-(void) liveCameraFeed  {
     //-- Setup Capture Session.
     _captureSession = [[AVCaptureSession alloc] init];
     //-- Creata a video device and input from that Device.  Add the input to the capture session.
@@ -36,7 +44,7 @@
     
     //-- Add the device to the session.
     NSError *error;
-    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:_backCamera
                                                                         error:&error];
     if(error)
         assert(0);
@@ -56,10 +64,7 @@
     
     //-- Start the camera
     [_captureSession startRunning];
-
 }
-
-#pragma mark - Camera Methods
 
 -(void) filterThroughDevices    {
     NSArray *devices = [AVCaptureDevice devices];
@@ -81,9 +86,17 @@
             }
         }
     }
-    
-
 }
 
+#pragma mark - Action Methods
+
+- (IBAction)switchCameraButtonPressed:(UIButton *)sender {
+    NSLog(@"Switch Camera");
+}
+
+
+- (IBAction)takePhotoButtonPressed:(UIButton *)sender {
+    NSLog(@"Take PHoto");
+}
 
 @end
