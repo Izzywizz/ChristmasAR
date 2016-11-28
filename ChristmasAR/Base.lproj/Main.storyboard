@@ -149,12 +149,12 @@
                                 <rect key="frame" x="0.0" y="563" width="375" height="104"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GK-fz-yJK" userLabel="SwitchCamera">
-                                <rect key="frame" x="333" y="25" width="27" height="28"/>
+                                <rect key="frame" x="325" y="25" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="Abz-LA-pkH"/>
-                                    <constraint firstAttribute="height" constant="28" id="xQD-Up-2yR"/>
+                                    <constraint firstAttribute="width" constant="35" id="Abz-LA-pkH"/>
+                                    <constraint firstAttribute="height" constant="35" id="xQD-Up-2yR"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="switch-camera"/>
+                                <state key="normal" backgroundImage="switch-camera"/>
                                 <connections>
                                     <action selector="switchCameraButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="i5P-0v-dHC"/>
                                 </connections>

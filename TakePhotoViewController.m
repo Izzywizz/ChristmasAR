@@ -88,10 +88,60 @@
     }
 }
 
+- (AVCaptureDevice *)cameraWithPosition:(AVCaptureDevicePosition)position
+{
+    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    
+    for (AVCaptureDevice *device in devices)
+    {
+        if ([device position] == position)
+            return device;
+    }
+    return nil;
+}
+
 #pragma mark - Action Methods
+
+// note that `AVCaptureSession * session`
+// make sure you have this method in your class
+//
 
 - (IBAction)switchCameraButtonPressed:(UIButton *)sender {
     NSLog(@"Switch Camera");
+    if(_captureSession)
+    {
+        [_captureSession beginConfiguration];
+        
+        AVCaptureInput *currentCameraInput = [_captureSession.inputs objectAtIndex:0];
+        
+        [_captureSession removeInput:currentCameraInput];
+        
+        AVCaptureDevice *newCamera = nil;
+        
+        if(((AVCaptureDeviceInput*)currentCameraInput).device.position == AVCaptureDevicePositionBack)
+        {
+            newCamera = [self cameraWithPosition:AVCaptureDevicePositionFront];
+        }
+        else
+        {
+            newCamera = [self cameraWithPosition:AVCaptureDevicePositionBack];
+        }
+        
+        NSError *err = nil;
+        
+        AVCaptureDeviceInput *newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:newCamera error:&err];
+        
+        if(!newVideoInput || err)
+        {
+            NSLog(@"Error creating capture device input: %@", err.localizedDescription);
+        }
+        else
+        {
+            [_captureSession addInput:newVideoInput];
+        }
+        
+        [_captureSession commitConfiguration];
+    }
 }
 
 
