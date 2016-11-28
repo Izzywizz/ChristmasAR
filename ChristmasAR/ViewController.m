@@ -31,7 +31,7 @@
  */
 -(void) animateRedRaindeerNose  {
     
-    NSArray *images = [NSArray arrayWithObjects:[UIImage imageNamed:@"characters.png"],[UIImage imageNamed:@"characters-brown-nose.png"], nil];
+    NSArray *images = [NSArray arrayWithObjects:[UIImage imageNamed:@"presents-red-nose.png"],[UIImage imageNamed:@"presents-brown-nose.png"], nil];
     //Then set array to UIImageViews "animationImages"property
     _santaSnowmanRaindeerImageView.animationImages = images;
     _santaSnowmanRaindeerImageView.animationDuration = 1;

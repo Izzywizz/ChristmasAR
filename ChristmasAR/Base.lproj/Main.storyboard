@@ -145,9 +145,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhi-5e-EzF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presents" translatesAutoresizingMaskIntoConstraints="NO" id="J2m-kg-SQe">
-                                <rect key="frame" x="0.0" y="563" width="375" height="104"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3GK-fz-yJK" userLabel="SwitchCamera">
                                 <rect key="frame" x="325" y="25" width="35" height="35"/>
                                 <constraints>
@@ -159,37 +156,71 @@
                                     <action selector="switchCameraButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="i5P-0v-dHC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2po-g6-QNV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presents" translatesAutoresizingMaskIntoConstraints="NO" id="J2m-kg-SQe">
+                                <rect key="frame" x="0.0" y="563" width="375" height="104"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x2-LG-eE9" userLabel="TakePhoto">
-                                <rect key="frame" x="147" y="586" width="80" height="81"/>
+                                <rect key="frame" x="147" y="566" width="80" height="81"/>
                                 <state key="normal" image="Capture"/>
                                 <connections>
                                     <action selector="takePhotoButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="8Tr-AT-jIO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFw-VR-6Eg" userLabel="share Button">
+                                <rect key="frame" x="331" y="25" width="28" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="ab1-PX-zQu"/>
+                                    <constraint firstAttribute="height" constant="33" id="rDk-hm-3LB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="share-button"/>
+                                <connections>
+                                    <action selector="shareButtonPresssed:" destination="aet-2v-fHF" eventType="touchUpInside" id="zr4-gA-2X5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9t-Fx-XXI" userLabel="reTake Photo">
+                                <rect key="frame" x="142" y="557" width="90" height="90"/>
+                                <state key="normal" title="RETAKE" backgroundImage="retake"/>
+                                <connections>
+                                    <action selector="reTakenPhotoButton:" destination="aet-2v-fHF" eventType="touchUpInside" id="f3P-Tg-lZ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="7x2-LG-eE9" secondAttribute="bottom" id="36D-Lc-38P"/>
+                            <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="7x2-LG-eE9" secondAttribute="bottom" constant="20" id="36D-Lc-38P"/>
                             <constraint firstItem="vhi-5e-EzF" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" constant="-20" id="4YC-Nh-Wf0"/>
                             <constraint firstItem="J2m-kg-SQe" firstAttribute="leading" secondItem="9l7-K5-yVk" secondAttribute="leading" id="93O-YM-zbP"/>
                             <constraint firstAttribute="trailing" secondItem="J2m-kg-SQe" secondAttribute="trailing" id="B9k-ka-zMH"/>
                             <constraint firstItem="7x2-LG-eE9" firstAttribute="centerX" secondItem="9l7-K5-yVk" secondAttribute="centerX" id="Lpd-u9-31f"/>
+                            <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="I9t-Fx-XXI" secondAttribute="bottom" constant="20" id="O8c-Yq-9Uv"/>
                             <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="vhi-5e-EzF" secondAttribute="bottom" id="OGL-C9-nn3"/>
                             <constraint firstAttribute="trailing" secondItem="3GK-fz-yJK" secondAttribute="trailing" constant="15" id="SVG-Aq-OPM"/>
                             <constraint firstItem="vhi-5e-EzF" firstAttribute="leading" secondItem="9l7-K5-yVk" secondAttribute="leading" id="dTa-Ka-nas"/>
                             <constraint firstAttribute="trailing" secondItem="vhi-5e-EzF" secondAttribute="trailing" id="dqq-rS-14T"/>
+                            <constraint firstAttribute="trailing" secondItem="AFw-VR-6Eg" secondAttribute="trailing" constant="16" id="hja-tL-Cxe"/>
+                            <constraint firstItem="AFw-VR-6Eg" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" constant="5" id="lwO-42-nTT"/>
                             <constraint firstItem="3GK-fz-yJK" firstAttribute="top" secondItem="AX2-B6-05z" secondAttribute="bottom" constant="5" id="ogI-e8-6no"/>
                             <constraint firstItem="fsy-oF-aB1" firstAttribute="top" secondItem="J2m-kg-SQe" secondAttribute="bottom" id="tzz-EK-yXT"/>
+                            <constraint firstItem="I9t-Fx-XXI" firstAttribute="centerX" secondItem="9l7-K5-yVk" secondAttribute="centerX" id="uJN-Lm-zj9"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cameraView" destination="vhi-5e-EzF" id="AWk-lQ-Cdq"/>
+                        <outlet property="imagePreview" destination="2po-g6-QNV" id="xmF-Zk-2kR"/>
+                        <outlet property="presentsPlaceholderImage" destination="J2m-kg-SQe" id="aeD-ee-wpQ"/>
+                        <outlet property="reTakePhotoButton" destination="I9t-Fx-XXI" id="dNT-eP-sJl"/>
+                        <outlet property="shareButton" destination="AFw-VR-6Eg" id="9lk-6y-rsE"/>
+                        <outlet property="switchCameraButton" destination="3GK-fz-yJK" id="vqh-Un-HHz"/>
                         <outlet property="view" destination="9l7-K5-yVk" id="xSu-ED-fBr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VP1-XN-9f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="767.76611694152928"/>
+            <point key="canvasLocation" x="984" y="881"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Hwo-uB-z4p">
@@ -260,6 +291,8 @@
         <image name="email-icon" width="13" height="11"/>
         <image name="photo" width="375" height="667"/>
         <image name="presents" width="375" height="104"/>
+        <image name="retake" width="90" height="90"/>
+        <image name="share-button" width="28" height="33"/>
         <image name="switch-camera" width="27" height="28"/>
     </resources>
 </document>

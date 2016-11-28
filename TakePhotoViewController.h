@@ -10,4 +10,10 @@
 
 @interface TakePhotoViewController : UIViewController
 
+@property BOOL isArActivated;
+@property (weak, nonatomic) IBOutlet UIImageView *presentsPlaceholderImage;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIButton *switchCameraButton;
+@property (weak, nonatomic) IBOutlet UIButton *reTakePhotoButton;
+
 @end

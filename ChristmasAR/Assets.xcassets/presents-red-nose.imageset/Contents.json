@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "characters-brown-nose.png",
+      "filename" : "presents-red-nose.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "characters-brown-nose@2x.png",
+      "filename" : "presents-red-nose@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "characters-brown-nose@3x.png",
+      "filename" : "presents-red-nose@3x.png",
       "scale" : "3x"
     }
   ],
