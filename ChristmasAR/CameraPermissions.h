@@ -14,7 +14,7 @@
 -(BOOL) checkPhotoAlbumPermission;
 -(BOOL) askForCameraPermission;
 
--(UIAlertController *) setupAlertSettingsBoxForCamera;
+-(UIAlertController *) setupAlertBoxForCameraAlbumSettings;
 -(UIAlertController *) setupAlertBoxForCameraSettings;
 
 

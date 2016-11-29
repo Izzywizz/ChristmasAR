@@ -81,7 +81,7 @@
 }
 
 #pragma mark - AlertView Methods
--(UIAlertController *) setupAlertSettingsBoxForCamera   {
+-(UIAlertController *) setupAlertBoxForCameraAlbumSettings   {
     NSString *title;
     title = @"Camera Album Permissions needed";
     NSString *message = @"To save photos, the app needs permission to save to your camera roll";

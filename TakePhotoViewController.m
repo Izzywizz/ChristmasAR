@@ -37,15 +37,12 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
-    if (_isArActivated) {
-        NSLog(@"activate the AR world");
-        [self setupPresentsAndSnowAnimation];
-    } else {
-        NSLog(@"DO NOT activate AR");
-    }
+    [self checkIfArIsActivated];
+    [self liveCameraFeed]; //needs to be called everytime the view reappears
 }
-
-
+-(void)viewWillDisappear:(BOOL)animated {
+    _captureSession = nil;
+}
 #pragma mark - Animation Methods
 /**
  Creating an animiated red nose! This method flicks between two static images of a raindeer with a red nose and with a brown nose.
@@ -84,7 +81,15 @@
     _snow = [[SnowFalling alloc] init];
     _camPermissions = [CameraPermissions new];
     
-    [self liveCameraFeed]; //needs to be called everytime the view reappears
+}
+
+-(void) checkIfArIsActivated  {
+    if (_isArActivated) {
+        NSLog(@"activate the AR world");
+        [self setupPresentsAndSnowAnimation];
+    } else {
+        NSLog(@"DO NOT activate AR");
+    }
 }
 
 -(void) setupPresentsAndSnowAnimation   {
@@ -299,14 +304,14 @@ error contextInfo:(void *)contextInfo
     [_camPermissions checkPhotoAlbumPermission];
     if (![_camPermissions checkPhotoAlbumPermission]) {
         NSLog(@"no permissions :(");
-        UIAlertController *alert = [_camPermissions setupAlertSettingsBoxForCamera];
+        UIAlertController *alert = [_camPermissions setupAlertBoxForCameraAlbumSettings];
         [self presentViewController:alert animated:YES completion:nil];
     }
-
+    
     if ([self takeScreenshot] == nil) {
         NSLog(@"No image has been taken from the screenshot method");
     } else {
-     UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, @selector(image:finishedSavingWithError:contextInfo:), nil);   
+        UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, @selector(image:finishedSavingWithError:contextInfo:), nil);
     }
     _imagePreview.image = [UIImage imageNamed:@""];
     _imagePreview.hidden = true;
