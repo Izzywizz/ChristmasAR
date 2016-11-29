@@ -208,10 +208,6 @@
             [_snow stopAnimating];
         }
     }];
-    
-    self.shareButton.hidden = false;
-    self.imagePreview.hidden = NO;
-    self.reTakePhotoButton.hidden = NO;
 }
 
 #pragma mark - Action Methods
@@ -254,6 +250,10 @@
     NSLog(@"Take PHoto");
     [self captureNow];
     [_presentsPlaceholderImage stopAnimating];
+    _saveButton.hidden = false;
+    _shareButton.hidden = false;
+    _imagePreview.hidden = NO;
+    _reTakePhotoButton.hidden = NO;
 }
 
 - (IBAction)shareButtonPresssed:(UIButton *)sender {
@@ -263,7 +263,6 @@
 - (IBAction)reTakenPhotoButton:(UIButton *)sender {
     [self liveCameraFeed];
     _imagePreview.hidden = true;
-    _saveButton.hidden = false;
     _shareButton.hidden = true;
     _imagePreview.image = [UIImage imageNamed:@""];
     [_presentsPlaceholderImage startAnimating];
