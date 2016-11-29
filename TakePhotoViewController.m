@@ -33,18 +33,10 @@
 #pragma mark - UI View Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _isArActivated = false; //Handles the AR Presents/snowing/ raindeeer flashing mechanic.
-    _reTakePhotoButton.hidden = true; //hide the retake button intitally
-    _shareButton.hidden = true;
-    _saveButton.hidden = true;
-    
-    _snow = [[SnowFalling alloc] init];
-    _camPermissions = [CameraPermissions new];
+    [self intialViewDidLoadSetup];
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
-    [self liveCameraFeed]; //needs to be called everytime the view dissapears
     if (_isArActivated) {
         NSLog(@"activate the AR world");
         [self setupPresentsAndSnowAnimation];
@@ -52,6 +44,7 @@
         NSLog(@"DO NOT activate AR");
     }
 }
+
 
 #pragma mark - Animation Methods
 /**
@@ -82,6 +75,17 @@
 
 #pragma mark - Helper Methods
 
+-(void) intialViewDidLoadSetup  {
+    _isArActivated = false; //Handles the AR Presents/snowing/ raindeeer flashing mechanic.
+    _reTakePhotoButton.hidden = true; //hide the retake button intitally
+    _shareButton.hidden = true;
+    _saveButton.hidden = true;
+    
+    _snow = [[SnowFalling alloc] init];
+    _camPermissions = [CameraPermissions new];
+    
+    [self liveCameraFeed]; //needs to be called everytime the view reappears
+}
 
 -(void) setupPresentsAndSnowAnimation   {
     [self animateRedRaindeerNose];
@@ -257,7 +261,9 @@ error contextInfo:(void *)contextInfo
         }
         else
         {
+            
             [_captureSession addInput:newVideoInput];
+            
         }
         
         [_captureSession commitConfiguration];
@@ -290,9 +296,8 @@ error contextInfo:(void *)contextInfo
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
-    if ([_camPermissions checkPhotoAlbumPermission]) {
-        NSLog(@"All Good, permission given");
-    } else  {
+    [_camPermissions checkPhotoAlbumPermission];
+    if (![_camPermissions checkPhotoAlbumPermission]) {
         NSLog(@"no permissions :(");
         UIAlertController *alert = [_camPermissions setupAlertSettingsBoxForCamera];
         [self presentViewController:alert animated:YES completion:nil];

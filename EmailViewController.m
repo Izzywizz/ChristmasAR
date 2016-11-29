@@ -10,9 +10,11 @@
 #import "SnowGeneratorView.h"
 #import "RRRegistration.h"
 #import <AVFoundation/AVFoundation.h>
+#import "CameraPermissions.h"
 
 @interface EmailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *emailAddressTextField;
+@property CameraPermissions *permissions;
 
 @end
 
@@ -23,11 +25,16 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
     [self setupPlaceholderTextColour];
-    [self askForCameraPermission];
-
+    _permissions = [[CameraPermissions alloc] init];
+    [_permissions askForCameraPermission];
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
+    if ([_permissions askForCameraPermission]) {
+        NSLog(@"Camrea Allowed");
+    } else{
+        [_permissions setupAlertBoxForCameraSettings];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,31 +43,6 @@
 }
 
 #pragma mark - Helper Methods
-
--(void) askForCameraPermission {
-    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    NSLog(@"status: %ld", (long)status);
-    if(status == AVAuthorizationStatusAuthorized) { // authorized
-        
-    }
-    else if(status == AVAuthorizationStatusDenied){ // denied
-        [self setupAlertSettingsBoxForCamera];
-    }
-    else if(status == AVAuthorizationStatusRestricted){ // restricted
-        [self setupAlertSettingsBoxForCamera];
-    }
-    else if(status == AVAuthorizationStatusNotDetermined){ // not determined
-        
-        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-            if(granted){ // Access has been granted ..do something
-                
-            } else { // Access denied ..do something
-                [self setupAlertSettingsBoxForCamera];
-            }
-        }];
-    }
-}
-
 -(void) setupPlaceholderTextColour  {
     NSString *placeholderText = @"Enter Email Address";
     if ([_emailAddressTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
@@ -70,26 +52,6 @@
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
         // TODO: Add fall-back code to set placeholder color.
     }
-}
-
--(void) setupAlertSettingsBoxForCamera   {
-    NSString *title;
-    title = @"Camera Permissions needed";
-    NSString *message = @"To use the app the camera access is needed, you must turn on 'While Using the App' in the Camera Settings for the app";
-    
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"Cancel Selected");
-    }];
-    UIAlertAction *settings = [UIAlertAction actionWithTitle:@"Setting" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        // Send the user to the Settings for this app
-        NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-        [[UIApplication sharedApplication] openURL:settingsURL];
-    }];
-    
-    [alertVC addAction:cancel];
-    [alertVC addAction:settings];
-    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 -(void) alertNoEmailView  {
@@ -104,13 +66,19 @@
 #pragma mark - Action Methods
 - (IBAction)acceptButtonPressed:(UIButton *)sender {
     RRRegistration *validation = [RRRegistration new];
+    [_permissions askForCameraPermission];
     
-//    if ([validation validateTextField:_emailAddressTextField]) {
+    if (![_permissions askForCameraPermission]) {
+        UIAlertController *alert = [_permissions setupAlertBoxForCameraSettings];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else if ([validation validateTextField:_emailAddressTextField]) {
         [self performSegueWithIdentifier:@"GoToTakePhoto" sender:self];
-//    } else  {
-//        NSLog(@"Alert Box");
-//        [self alertNoEmailView];
-//    }
+    } else  {
+        NSLog(@"Alert Box");
+        [self alertNoEmailView];
+    }
+    
+    
 }
 - (IBAction)termsButtonPressed:(UIButton *)sender {
     NSLog(@"Terms Button Pressed");

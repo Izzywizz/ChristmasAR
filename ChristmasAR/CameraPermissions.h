@@ -12,7 +12,10 @@
 @interface CameraPermissions : NSObject
 
 -(BOOL) checkPhotoAlbumPermission;
+-(BOOL) askForCameraPermission;
+
 -(UIAlertController *) setupAlertSettingsBoxForCamera;
+-(UIAlertController *) setupAlertBoxForCameraSettings;
 
 
 @end
