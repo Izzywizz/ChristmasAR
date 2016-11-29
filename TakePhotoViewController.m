@@ -8,7 +8,7 @@
 
 #import "TakePhotoViewController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "SnowGeneratorView.h"
+#import "SnowFalling.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface TakePhotoViewController ()
@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property AVCaptureStillImageOutput *stillImageOutput;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
+
+@property SnowFalling *snow;
 
 
 @end
@@ -34,6 +36,7 @@
     _reTakePhotoButton.hidden = true; //hide the retake button intitally
     _shareButton.hidden = true;
     _saveButton.hidden = true;
+    _snow = [[SnowFalling alloc] init];
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
@@ -65,8 +68,12 @@
 }
 
 -(void) generateSnowflakes  {
-    SnowGeneratorView *view = [[SnowGeneratorView alloc] init];
-    [view generateSnowflakes:self.view];
+        _snow = [[SnowFalling alloc] initWithView:self.view];
+        // personalize values (optional)
+        _snow.numbersOfFlake = 30;
+        _snow.directionsOfFlake = SnowFlakeDirectionVertical;
+        _snow.imageOfFlake = [UIImage imageNamed:[NSString stringWithFormat:@"snow-flake-1.png"]];
+        _snow.hidden = NO;
 }
 
 #pragma mark - Helper Methods
@@ -75,6 +82,7 @@
     [self animateRedRaindeerNose];
     [self generateSnowflakes];
 }
+
 
 #pragma mark - Sharing Functionality
 -(void)shareContent{
@@ -191,10 +199,13 @@
             //            [self setupPresentsAndSnowAnimation];
             _imagePreview.image = image; //preview the image with the new presents
             _imagePreview.image = [self takeScreenshot];
+            [_snow stopAnimating];
+
         } else  {
             _imagePreview.image = image; //preview the image WITHOUT presents
             _imagePreview.image = [self takeScreenshot];
             [self takeScreenshot];
+            [_snow stopAnimating];
         }
     }];
     
@@ -243,7 +254,6 @@
     NSLog(@"Take PHoto");
     [self captureNow];
     [_presentsPlaceholderImage stopAnimating];
-    _saveButton.hidden = false;
 }
 
 - (IBAction)shareButtonPresssed:(UIButton *)sender {
@@ -252,9 +262,12 @@
 
 - (IBAction)reTakenPhotoButton:(UIButton *)sender {
     [self liveCameraFeed];
-    self.imagePreview.hidden = true;
-    self.shareButton.hidden = true;
-    self.imagePreview.image = [UIImage imageNamed:@""];
+    _imagePreview.hidden = true;
+    _saveButton.hidden = false;
+    _shareButton.hidden = true;
+    _imagePreview.image = [UIImage imageNamed:@""];
+    [_presentsPlaceholderImage startAnimating];
+    [_snow startAnimating];
 
 }
 
@@ -263,11 +276,13 @@
         NSLog(@"NIl");
     }
     UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, nil, nil);
-    self.imagePreview.image = [UIImage imageNamed:@""];
-    self.imagePreview.hidden = true;
-    self.shareButton.hidden = true;
+    _imagePreview.image = [UIImage imageNamed:@""];
+    _imagePreview.hidden = true;
+    _shareButton.hidden = true;
     _saveButton.hidden = true;
     [self liveCameraFeed];
+    [_presentsPlaceholderImage startAnimating];
+    [_snow startAnimating];
 }
 
 @end

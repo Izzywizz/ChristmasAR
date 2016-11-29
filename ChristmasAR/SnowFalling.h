@@ -53,6 +53,8 @@ typedef enum {
 - (void)startAnimating;
 - (void)stopAnimating;
 
+- (void)removeAllFlakesWithAnimation:(BOOL)animated;
+
 @end
 
 #endif

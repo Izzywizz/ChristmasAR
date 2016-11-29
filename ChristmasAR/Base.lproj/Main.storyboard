@@ -156,10 +156,10 @@
                                     <action selector="switchCameraButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="i5P-0v-dHC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2po-g6-QNV">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2po-g6-QNV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presents" translatesAutoresizingMaskIntoConstraints="NO" id="J2m-kg-SQe">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="presents" translatesAutoresizingMaskIntoConstraints="NO" id="J2m-kg-SQe">
                                 <rect key="frame" x="0.0" y="632" width="414" height="104"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7x2-LG-eE9" userLabel="TakePhoto">
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VP1-XN-9f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="881"/>
+            <point key="canvasLocation" x="982.60869565217399" y="880.43478260869574"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Hwo-uB-z4p">
