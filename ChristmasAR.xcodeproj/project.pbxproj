@@ -19,6 +19,7 @@
 		4316653A1DE5D67A00324F40 /* SnowGeneratorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 431665391DE5D67A00324F40 /* SnowGeneratorView.m */; };
 		4326300B1DE6F5E4006F8CCB /* RRRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4326300A1DE6F5E4006F8CCB /* RRRegistration.m */; };
 		438037A31DE7200D00FCE390 /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 438037A21DE7200D00FCE390 /* TakePhotoViewController.m */; };
+		43A0C59D1DED8E9C0029BB88 /* CameraPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A0C59C1DED8E9C0029BB88 /* CameraPermissions.m */; };
 		43EF269E1DE5E12B0020D809 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */; };
 		43EF269F1DE5E12B0020D809 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */; };
 		43EF26A01DE5E12B0020D809 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43EF269D1DE5E12B0020D809 /* OFL.txt */; };
@@ -73,6 +74,8 @@
 		4326300A1DE6F5E4006F8CCB /* RRRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRRegistration.m; sourceTree = "<group>"; };
 		438037A11DE7200D00FCE390 /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TakePhotoViewController.h; path = ../TakePhotoViewController.h; sourceTree = "<group>"; };
 		438037A21DE7200D00FCE390 /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TakePhotoViewController.m; path = ../TakePhotoViewController.m; sourceTree = "<group>"; };
+		43A0C59B1DED8E9C0029BB88 /* CameraPermissions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraPermissions.h; sourceTree = "<group>"; };
+		43A0C59C1DED8E9C0029BB88 /* CameraPermissions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraPermissions.m; sourceTree = "<group>"; };
 		43EF269B1DE5E12B0020D809 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		43EF269C1DE5E12B0020D809 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		43EF269D1DE5E12B0020D809 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 				4326300C1DE6F5E7006F8CCB /* Validation */,
 				43EF26D61DE5EB8C0020D809 /* Snow Animation */,
 				43EF26A21DE5EB820020D809 /* IQKeyboardManager */,
+				43A0C59B1DED8E9C0029BB88 /* CameraPermissions.h */,
+				43A0C59C1DED8E9C0029BB88 /* CameraPermissions.m */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 				43EF26D41DE5EB820020D809 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				43EF26C91DE5EB820020D809 /* IQUITextFieldView+Additions.m in Sources */,
 				43EF26CD1DE5EB820020D809 /* IQKeyboardManager.m in Sources */,
+				43A0C59D1DED8E9C0029BB88 /* CameraPermissions.m in Sources */,
 				43EF26D31DE5EB820020D809 /* IQToolbar.m in Sources */,
 				43EF26D21DE5EB820020D809 /* IQTitleBarButtonItem.m in Sources */,
 				4326300B1DE6F5E4006F8CCB /* RRRegistration.m in Sources */,

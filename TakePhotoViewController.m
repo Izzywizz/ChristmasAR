@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "SnowFalling.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CameraPermissions.h"
 
 @interface TakePhotoViewController ()
 
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property AVCaptureStillImageOutput *stillImageOutput;
 @property (weak, nonatomic) IBOutlet UIImageView *imagePreview;
+@property CameraPermissions *camPermissions;
 
 @property SnowFalling *snow;
 
@@ -32,11 +34,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _isArActivated = true; //Handles the AR Presents/snowing/ raindeeer flashing mechanic.
+    _isArActivated = false; //Handles the AR Presents/snowing/ raindeeer flashing mechanic.
     _reTakePhotoButton.hidden = true; //hide the retake button intitally
     _shareButton.hidden = true;
     _saveButton.hidden = true;
+    
     _snow = [[SnowFalling alloc] init];
+    _camPermissions = [CameraPermissions new];
 }
 
 -(void) viewWillAppear:(BOOL)animated   {
@@ -68,19 +72,36 @@
 }
 
 -(void) generateSnowflakes  {
-        _snow = [[SnowFalling alloc] initWithView:self.view];
-        // personalize values (optional)
-        _snow.numbersOfFlake = 30;
-        _snow.directionsOfFlake = SnowFlakeDirectionVertical;
-        _snow.imageOfFlake = [UIImage imageNamed:[NSString stringWithFormat:@"snow-flake-1.png"]];
-        _snow.hidden = NO;
+    _snow = [[SnowFalling alloc] initWithView:self.view];
+    // personalize values (optional)
+    _snow.numbersOfFlake = 30;
+    _snow.directionsOfFlake = SnowFlakeDirectionVertical;
+    _snow.imageOfFlake = [UIImage imageNamed:[NSString stringWithFormat:@"snow-flake-1.png"]];
+    _snow.hidden = NO;
 }
 
 #pragma mark - Helper Methods
 
+
 -(void) setupPresentsAndSnowAnimation   {
     [self animateRedRaindeerNose];
     [self generateSnowflakes];
+}
+
+-(void)image:(UIImage *)image
+finishedSavingWithError:(NSError *)
+error contextInfo:(void *)contextInfo
+{
+    if (error) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Save Failed" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction  *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"Ok pressed");
+        }];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else  {
+        NSLog(@"Image Saved Sucessfully");
+    }
 }
 
 
@@ -200,12 +221,10 @@
             _imagePreview.image = image; //preview the image with the new presents
             _imagePreview.image = [self takeScreenshot];
             [_snow stopAnimating];
-
+            
         } else  {
             _imagePreview.image = image; //preview the image WITHOUT presents
             _imagePreview.image = [self takeScreenshot];
-            [self takeScreenshot];
-            [_snow stopAnimating];
         }
     }];
 }
@@ -267,21 +286,33 @@
     _imagePreview.image = [UIImage imageNamed:@""];
     [_presentsPlaceholderImage startAnimating];
     [_snow startAnimating];
-
+    
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
-    if ([self takeScreenshot] == nil) {
-        NSLog(@"NIl");
+    if ([_camPermissions checkPhotoAlbumPermission]) {
+        NSLog(@"All Good, permission given");
+    } else  {
+        NSLog(@"no permissions :(");
+        UIAlertController *alert = [_camPermissions setupAlertSettingsBoxForCamera];
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, nil, nil);
+
+    if ([self takeScreenshot] == nil) {
+        NSLog(@"No image has been taken from the screenshot method");
+    } else {
+     UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, @selector(image:finishedSavingWithError:contextInfo:), nil);   
+    }
     _imagePreview.image = [UIImage imageNamed:@""];
     _imagePreview.hidden = true;
     _shareButton.hidden = true;
     _saveButton.hidden = true;
     [self liveCameraFeed];
-    [_presentsPlaceholderImage startAnimating];
-    [_snow startAnimating];
+    
+    if (_isArActivated) {
+        [_presentsPlaceholderImage startAnimating];
+        [_snow startAnimating];
+    }
 }
 
 @end
