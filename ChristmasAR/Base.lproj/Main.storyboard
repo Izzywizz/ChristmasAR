@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -181,8 +182,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9t-Fx-XXI" userLabel="Save Photo">
-                                <rect key="frame" x="162" y="626" width="90" height="90"/>
-                                <state key="normal" title="SAVE" backgroundImage="retake"/>
+                                <rect key="frame" x="167" y="636" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I9t-Fx-XXI" secondAttribute="height" multiplier="1:1" id="z9u-e0-cSc"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="save-button"/>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="aet-2v-fHF" eventType="touchUpInside" id="15v-Vc-E6P"/>
                                 </connections>
@@ -305,7 +309,7 @@
         <image name="email-icon" width="13" height="11"/>
         <image name="photo" width="375" height="667"/>
         <image name="presents" width="375" height="104"/>
-        <image name="retake" width="90" height="90"/>
+        <image name="save-button" width="80" height="80"/>
         <image name="share-button" width="28" height="33"/>
         <image name="switch-camera" width="27" height="28"/>
     </resources>

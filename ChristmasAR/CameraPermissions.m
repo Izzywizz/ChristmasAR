@@ -50,7 +50,7 @@
         return false;
     }
     
-    return nil;
+    return false;
 }
 
 -(BOOL) askForCameraPermission {

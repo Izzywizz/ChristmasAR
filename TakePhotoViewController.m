@@ -39,8 +39,10 @@
 -(void) viewWillAppear:(BOOL)animated   {
     [self checkIfArIsActivated];
     [self liveCameraFeed]; //needs to be called everytime the view reappears
+    [_captureSession startRunning];
 }
 -(void)viewWillDisappear:(BOOL)animated {
+    [_captureSession stopRunning];
     _captureSession = nil;
 }
 #pragma mark - Animation Methods
@@ -80,7 +82,6 @@
     
     _snow = [[SnowFalling alloc] init];
     _camPermissions = [CameraPermissions new];
-    
 }
 
 -(void) checkIfArIsActivated  {
@@ -97,21 +98,6 @@
     [self generateSnowflakes];
 }
 
--(void)image:(UIImage *)image
-finishedSavingWithError:(NSError *)
-error contextInfo:(void *)contextInfo
-{
-    if (error) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Save Failed" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction  *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"Ok pressed");
-        }];
-        [alertController addAction:ok];
-        [self presentViewController:alertController animated:YES completion:nil];
-    } else  {
-        NSLog(@"Image Saved Sucessfully");
-    }
-}
 
 
 #pragma mark - Sharing Functionality
@@ -301,8 +287,8 @@ error contextInfo:(void *)contextInfo
 }
 
 - (IBAction)saveButtonPressed:(UIButton *)sender {
-    [_camPermissions checkPhotoAlbumPermission];
-    if (![_camPermissions checkPhotoAlbumPermission]) {
+    BOOL checkIfPermissionGranted = [_camPermissions checkPhotoAlbumPermission];
+    if (checkIfPermissionGranted == false) {
         NSLog(@"no permissions :(");
         UIAlertController *alert = [_camPermissions setupAlertBoxForCameraAlbumSettings];
         [self presentViewController:alert animated:YES completion:nil];
@@ -311,7 +297,7 @@ error contextInfo:(void *)contextInfo
     if ([self takeScreenshot] == nil) {
         NSLog(@"No image has been taken from the screenshot method");
     } else {
-        UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, @selector(image:finishedSavingWithError:contextInfo:), nil);
+        UIImageWriteToSavedPhotosAlbum([self takeScreenshot], nil, nil, nil);
     }
     _imagePreview.image = [UIImage imageNamed:@""];
     _imagePreview.hidden = true;
