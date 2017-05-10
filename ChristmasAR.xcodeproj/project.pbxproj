@@ -364,7 +364,7 @@
 				TargetAttributes = {
 					431665001DE5B8E800324F40 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 6HA878TP6G;
+						DevelopmentTeam = VZ2738TJ98;
 						ProvisioningStyle = Automatic;
 					};
 					431665191DE5B8E900324F40 = {
@@ -581,7 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6HA878TP6G;
+				DEVELOPMENT_TEAM = VZ2738TJ98;
 				INFOPLIST_FILE = ChristmasAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -594,7 +594,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6HA878TP6G;
+				DEVELOPMENT_TEAM = VZ2738TJ98;
 				INFOPLIST_FILE = ChristmasAR/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
